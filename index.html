@@ -1,4 +1,1037 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Guia de Módulos | EFAE</title><style>
-:root{--bg:#f7f4ef;--ink:#28211c;--gold:#c6a27b;--muted:#796f66;--line:#e7ded2}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.5}.hero{background:linear-gradient(135deg,#211913,#3a291d);color:#fff;padding:55px 20px 65px;text-align:center}.brand{display:inline-block;color:#d6b38c;border:1px solid #d6b38c;padding:4px 18px;font-size:24px;font-weight:800;letter-spacing:5px}.eyebrow{font-size:11px;letter-spacing:2px;color:#d5b998;margin:16px 0}.hero h1{font-size:clamp(32px,5vw,54px);margin:12px 0 8px;letter-spacing:-1px}.hero p{color:#d7c9bc;margin:0}.wrap{max-width:980px;margin:-28px auto 60px;padding:0 18px}.toolbar{background:white;padding:20px;border-radius:15px;box-shadow:0 12px 35px #24160b12;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.search{flex:1;min-width:220px;padding:13px 15px;border:1px solid var(--line);border-radius:9px;font:inherit;outline:none}.search:focus{border-color:#ad8156}.btn{border:1px solid #bda78f;border-radius:9px;background:white;color:#4b3826;padding:12px 14px;cursor:pointer;font-weight:600}.btn:hover{background:#f8f1e8}.stats{margin:25px 4px 14px;color:var(--muted);font-size:14px}.module{background:white;border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden;box-shadow:0 2px 8px #291c1006}.module summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:17px;padding:19px 22px}.module summary::-webkit-details-marker{display:none}.number{color:#9b744f;background:#f6eee5;border-radius:9px;padding:11px 12px;font-size:13px;font-weight:800;white-space:nowrap}.meta{flex:1;min-width:0}.name{font-size:16px;font-weight:750}.count{color:var(--muted);font-size:12px;margin-top:4px}.arrow{color:#987553;font-size:22px;transition:transform .2s}.module[open] .arrow{transform:rotate(180deg)}.module[open] summary{background:#fcf9f5}.lessons{border-top:1px solid var(--line);padding:6px 22px 13px}.lesson{display:flex;gap:15px;padding:13px 4px;border-bottom:1px solid #f1ebe4;align-items:flex-start}.lesson:last-child{border:0}.lessonnum{font-weight:750;color:#aa8056;min-width:26px}.lessonname{font-size:14px}.empty{text-align:center;padding:35px;color:var(--muted)}footer{text-align:center;color:#8a7b6e;font-size:12px;padding:0 18px 35px}@media(max-width:600px){.hero{padding-top:40px}.module summary{padding:15px 12px;gap:10px}.number{padding:9px 8px;font-size:11px}.name{font-size:14px}.lessons{padding:5px 14px}.btn{flex:1}}
-</style></head><body><header class="hero"><div class="brand">EFAE</div><div class="eyebrow">ESCOLA DE FORMAÇÃO EM ADVOCACIA EMPRESARIAL</div><h1>Guia de Módulos</h1><p>Conheça os conteúdos e aulas da sua formação</p></header><main class="wrap"><section class="toolbar"><input id="search" class="search" placeholder="Buscar módulo ou aula..." aria-label="Buscar módulos ou aulas"><button class="btn" id="expand">Expandir todos</button><button class="btn" id="collapse">Recolher todos</button></section><div id="stats" class="stats"></div><section id="modules"></section></main><footer>EFAE · Prof. André Santa Cruz · Guia de módulos</footer><script>const modules=[{"num": 1, "title": "ADVOCACIA EMPRESARIAL E DESENVOLVIMENTO PROFISSIONAL", "lessons": [{"n": 1, "title": "Aula magna | Advocacia empresarial: passado, presente e futuro"}, {"n": 2, "title": "Como iniciar (e evoluir) na carreira da advocacia empresarial"}, {"n": 3, "title": "Advocacia para Startups"}, {"n": 4, "title": "Como assessorar empresas que vendem para a Administração Pública"}, {"n": 5, "title": "O impacto da regulamentação dos jogos no ordenamento jurídico brasileiro"}, {"n": 6, "title": "Direito Penal como instrumento para encerrar conflitos societários"}, {"n": 7, "title": "Técnicas de negociação eficiente"}, {"n": 8, "title": "Persuasão na reunião"}, {"n": 9, "title": "Hotseat | Academia e Advocacia"}]}, {"num": 2, "title": "ADVOCACIA NO STJ", "lessons": [{"n": 1, "title": "A advocacia no STJ (Parte 1)"}, {"n": 2, "title": "A advocacia no STJ (Parte 2)"}, {"n": 3, "title": "A advocacia no STJ (Parte 3)"}, {"n": 4, "title": "A advocacia no STJ (Parte 4)"}, {"n": 5, "title": "Recursos | Instância extraordinária: Introdução; Recurso Especial"}, {"n": 6, "title": "Recursos | Instância extraordinária: Recurso Especial (Parte 1)"}, {"n": 7, "title": "Recursos | Instância extraordinária: Recurso Especial (Parte 2)"}, {"n": 8, "title": "Recursos | Instância extraordinária: Recurso Especial (Parte 3)"}, {"n": 9, "title": "Recursos | Instância extraordinária: Recurso Especial (Parte 4)"}, {"n": 10, "title": "Recursos | Instância extraordinária: Agravo em Recurso Especial; Recursos “operacionais”; Agravo Interno"}, {"n": 11, "title": "Recursos “Operacionais”: Embargos de declaração (Parte 1)"}, {"n": 12, "title": "Recursos “Operacionais”: Embargos de declaração (Parte 2)"}, {"n": 13, "title": "Recursos “Operacionais”: Embargos de divergência; Recursos | Duplo Grau: Recurso Ordinário"}, {"n": 14, "title": "Recursos | Duplo grau: Recurso Ordinário; Incidentes"}, {"n": 15, "title": "Incidentes | Ações originárias"}]}, {"num": 3, "title": "COBRANÇA E EXECUÇÃO EMPRESARIAL", "lessons": [{"n": 1, "title": "Ações cambiais: execução, monitória, defesas"}, {"n": 2, "title": "Penhora de Quotas"}, {"n": 3, "title": "Defesa em Ações Cambiais"}, {"n": 4, "title": "Penhora de Stock Options"}, {"n": 5, "title": "Penhora de Criptoativos"}, {"n": 6, "title": "Capital social declarado x capital social integralizado: efeitos práticos na execução"}, {"n": 7, "title": "Embargos de terceiro"}, {"n": 8, "title": "Penhora do faturamento de empresa"}, {"n": 9, "title": "Cobrança de dívidas: ação monitória e execução de títulos executivos extrajudiciais"}]}, {"num": 4, "title": "COLEÇÃO | CONTEÚDOS EXTRAS", "lessons": [{"n": 1, "title": "Simulado EFAE"}]}, {"num": 5, "title": "COLEÇÃO | MODELOS DE CONTENCIOSO EMPRESARIAL", "lessons": [{"n": 1, "title": "Ação de Dissolução Parcial por Exclusão"}, {"n": 2, "title": "Ação de Reconhecimento de Sociedade c.c Dissolução"}, {"n": 3, "title": "Inicial | Ação de Prestação de Contas - SCP"}, {"n": 4, "title": "Inicial modelo"}]}, {"num": 6, "title": "COLEÇÃO | MODELOS DE INVESTIMENTO E FINANCIAMENTO", "lessons": [{"n": 1, "title": "Contrato de Vesting"}, {"n": 2, "title": "Modelo de Escritura de Emissão Debentures"}, {"n": 3, "title": "PMZ mútuo conversível template"}, {"n": 4, "title": "escritura-sul-america-s-a"}]}, {"num": 7, "title": "COLEÇÃO | MODELOS DE RECUPERAÇÃO E INSOLVÊNCIA", "lessons": [{"n": 1, "title": "Habilitação Tempestiva de Crédito"}, {"n": 2, "title": "INICIAL - unimed"}, {"n": 3, "title": "Apelação Figueirense"}, {"n": 4, "title": "Figueirense | Plano de RE (v.final)"}, {"n": 5, "title": "Figueirense - Pet Homologacao do PRE (v. autuada)"}]}, {"num": 8, "title": "COLEÇÃO | MODELOS PARA ESCRITÓRIOS DE ADVOCACIA", "lessons": [{"n": 1, "title": "Contratos de Parceria e Indicação em Prestação de Serviços Jurídicos"}, {"n": 2, "title": "Contrato de Honorários para Contencioso"}, {"n": 3, "title": "Memorandum of Understanding (MoU) - PARCERIA"}, {"n": 4, "title": "Plano de carreira de advogados - Modelo exemplificativo"}]}, {"num": 9, "title": "COLEÇÃO | MODELOS SOCIETÁRIOS", "lessons": [{"n": 1, "title": "Acordo de Acionistas"}, {"n": 2, "title": "Acordo de Quotistas PJ Médicos"}, {"n": 3, "title": "ACORDO+HOLDING+PATRIMONIAL"}, {"n": 4, "title": "Alteração Contratual Post Mortem de Sócio"}, {"n": 5, "title": "Cláusulas Societárias"}, {"n": 6, "title": "Modelo de Contrato Social - PJ Médicos"}, {"n": 7, "title": "Modelo transformação LTDA em S.A"}, {"n": 8, "title": "Retirada de sócio após notificação"}, {"n": 9, "title": "Acordo de Quotista"}, {"n": 10, "title": "Contrato Social com sócios de serviço"}]}, {"num": 10, "title": "COMPLIANCE", "lessons": [{"n": 1, "title": "Compliance e Direito do Consumidor: a importância da integridade nas relações consumeristas"}, {"n": 2, "title": "Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 1)"}, {"n": 3, "title": "Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 2)"}, {"n": 4, "title": "Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 3)"}, {"n": 5, "title": "Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 4)"}, {"n": 6, "title": "Redação de Código de Conduta e Ética e Gestão de Canal de Escuta"}]}, {"num": 11, "title": "CONFLITOS SOCIETÁRIOS", "lessons": [{"n": 1, "title": "A Responsabilidade do Ex-sócio"}, {"n": 2, "title": "Exclusão Extrajudicial de Sócios"}, {"n": 3, "title": "Exclusão de Sócio: Estratégias e Liminares"}, {"n": 4, "title": "Cláusula de Shotgun"}, {"n": 5, "title": "Liminares e Ações não Contenciosas Estratégicas"}, {"n": 6, "title": "Exclusão de Sócio"}]}, {"num": 12, "title": "CONTENCIOSO EMPRESARIAL", "lessons": [{"n": 1, "title": "Ação de Responsabilidade por Abuso do Controlador"}, {"n": 2, "title": "Negócios Jurídicos Processuais"}, {"n": 3, "title": "Intervenção judicial em Conflitos Societários"}, {"n": 4, "title": "Ação de Responsabilidade do art. 246, da Lei 6.404/76"}, {"n": 5, "title": "Solução de Disputas no Contencioso Estratégico Empresarial"}, {"n": 6, "title": "Arbitragem: Principais Temas"}, {"n": 7, "title": "Ação de Reconhecimento de Sociedade de Fato"}, {"n": 8, "title": "Ação de Exigir Contas"}, {"n": 9, "title": "Aspectos Práticos da Advocacia em Leilões de Imóveis"}, {"n": 10, "title": "Negócio Jurídico Processual Aplicado aos Contratos Empresariais: Limites e Possibilidades"}, {"n": 11, "title": "Ação Indenizatória por Violação de Segredo de Negócio"}, {"n": 12, "title": "Ação Renovatória de Locação: Requisitos e Prazos Fatais para Garantir a Permanência da Empresa no Ponto Comercial"}, {"n": 13, "title": "Impactos Processuais na Lei 14.195/21"}, {"n": 14, "title": "Técnicas de Litigância"}, {"n": 15, "title": "Intervenção Judicial em Conflitos Societários (Parte 1)"}, {"n": 16, "title": "Intervenção Judicial em Conflitos Societários (Parte 2)"}, {"n": 17, "title": "Intervenção Judicial em Conflitos Societários (Parte 3)"}]}, {"num": 13, "title": "CONTRATOS DA ECONOMIA DIGITAL E CRIATIVA", "lessons": [{"n": 1, "title": "Influenciadores Digitais: Aspectos Jurídicos"}, {"n": 2, "title": "Contratos com Streamers e Plataformas de Streaming"}, {"n": 3, "title": "Contrato de Media for Equity"}, {"n": 4, "title": "Contratos de Coprodução de Curso Online"}, {"n": 5, "title": "Contrato de Naming Rights"}, {"n": 6, "title": "Requerimento de Remoção de Conteúdo Ilícito em Redes Sociais à Luz do Tema 987, do STF"}]}, {"num": 14, "title": "CONTRATOS EMPRESARIAIS EM ESPÉCIE", "lessons": [{"n": 1, "title": "Cessão de Quotas x Trespasse: Diferenças, Requisitos e Efeitos"}, {"n": 2, "title": "Implementação do Sistema de Franquias"}, {"n": 3, "title": "Seguros Empresariais"}, {"n": 4, "title": "Sociedade em Conta de Participação (SCP)"}, {"n": 5, "title": "Seguro de Responsabilidade Civil para Empresas e Profissionais de Saúde"}, {"n": 6, "title": "Contrato de Built to Suit"}, {"n": 7, "title": "Contratos de Colaboração"}]}, {"num": 15, "title": "CRIPTOATIVOS, BLOCKCHAIN E TOKENIZAÇÃO", "lessons": [{"n": 1, "title": "Contratos com Prestadores de Serviços de Ativos Virtuais"}, {"n": 2, "title": "Marco Legal dos Criptoativos"}, {"n": 3, "title": "Advocacia no Mercado de Criptoativos"}, {"n": 4, "title": "Aplicação da Blockchain na Advocacia Empresarial"}, {"n": 5, "title": "Tokenização de valor mobiliário via Resolução CVM 88"}]}, {"num": 16, "title": "DESCONSIDERAÇÃO DA PERSONALIDADE JURÍDICA", "lessons": [{"n": 1, "title": "A Desconsideração da Personalidade Jurídica nos Processos de Insolvência"}, {"n": 2, "title": "A Defesa do Sócio/Administrador de Sociedade Empresária na Execução Fiscal"}, {"n": 3, "title": "Desconsideração da Personalidade Jurídica"}, {"n": 4, "title": "O Fim da Teoria Menor da Desconsideração (Parte 1)"}, {"n": 5, "title": "O Fim da Teoria Menor da Desconsideração (Parte 2)"}, {"n": 6, "title": "O Fim da Teoria Menor da Desconsideração (Parte 3)"}, {"n": 7, "title": "Defesa da PJ em Incidentes de Desconsideração"}, {"n": 8, "title": "Ações de Desconsideração da PJ"}, {"n": 9, "title": "Incidente de Desconsideração da Personalidade Jurídica"}, {"n": 10, "title": "Alterações na Desconsideração da Personalidade Jurídica"}]}, {"num": 17, "title": "DIREITO COOPERATIVO E COOPERATIVISMO", "lessons": [{"n": 1, "title": "Direito Cooperativo e Cooperativismo (Parte 1)"}, {"n": 2, "title": "Direito Cooperativo e Cooperativismo (Parte 2)"}, {"n": 3, "title": "Direito Cooperativo e Cooperativismo (Parte 3)"}, {"n": 4, "title": "Direito Cooperativo e Cooperativismo (Parte 4)"}]}, {"num": 18, "title": "DIREITO DESPORTIVO EMPRESARIAL", "lessons": [{"n": 1, "title": "Aspectos Práticos da SAF I (Lei 14.193/2021)"}, {"n": 2, "title": "Aspectos Societários dos Clubes-Empresa e das SAFs"}, {"n": 3, "title": "Questões práticas sobre M&As de SAFs"}, {"n": 4, "title": "SAF e Recuperação Judicial de Clubes de Futebol (Parte 1)"}, {"n": 5, "title": "SAF e Recuperação Judicial de Clubes de Futebol (Parte 2)"}, {"n": 6, "title": "SAF e Recuperação Judicial de Clubes de Futebol (Parte 3)"}, {"n": 7, "title": "Fair Play Financeiro"}]}, {"num": 19, "title": "DIREITO DO AGRONEGÓCIO", "lessons": [{"n": 1, "title": "Contratos do Agronegócio"}, {"n": 2, "title": "Crédito Rural e Sistema Privado de Financiamento do Agronegócio"}, {"n": 3, "title": "Advocacia Empresarial no Agronegócio (Parte 1)"}, {"n": 4, "title": "Advocacia Empresarial no Agronegócio (Parte 2)"}]}, {"num": 20, "title": "DIREITO DO TRABALHO EMPRESARIAL", "lessons": [{"n": 1, "title": "O Que a Regra que Bane Cláusula de Não Concorrência com Trabalhadores nos EUA Pode Sinalizar Para as Empresas no Brasil"}, {"n": 2, "title": "Princípios | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 1)"}, {"n": 3, "title": "Relação de Emprego x Pejotização | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 2)"}, {"n": 4, "title": "Casos Frequentes em Empresas | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 3)"}, {"n": 5, "title": "Riscos Psicossociais: O Novo Capítulo da NR-1 que o Empresário (e o Advogado Dele) Precisa Entender | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 4)"}]}, {"num": 21, "title": "DIREITO NO MERCADO FINANCEIRO", "lessons": [{"n": 1, "title": "Novo Marco Legal das Garantias"}, {"n": 2, "title": "Estrutura jurídica dos produtos bancários e do crédito no Mercado Financeiro"}, {"n": 3, "title": "Bancos Públicos, Financiamento ao Desenvolvimento e Política de Crédito"}, {"n": 4, "title": "Câmbio, Stablecoins e Inovação Regulatória no Mercado Financeiro"}, {"n": 5, "title": "Proteção de Dados no Mercado Financeiro"}, {"n": 6, "title": "Contencioso estratégico no Mercado Financeiro"}, {"n": 7, "title": "Propriedade Intelectual no Mercado Financeiro"}]}, {"num": 22, "title": "DIREITO TRIBUTÁRIO EMPRESARIAL", "lessons": [{"n": 1, "title": "Aspectos da Carga Tributária no Mundo e no Brasil (Parte 1)"}, {"n": 2, "title": "Aspectos da Carga Tributária no Mundo e no Brasil (Parte 2)"}, {"n": 3, "title": "Aspectos da Carga Tributária no Mundo e no Brasil (Parte 3)"}, {"n": 4, "title": "Aspectos da Carga Tributária no Mundo e no Brasil (Parte 4)"}, {"n": 5, "title": "Aspectos Tributários da Integralização de Capital Social (Parte 1)"}, {"n": 6, "title": "Aspectos Tributários da Integralização de Capital Social (Parte 2)"}]}, {"num": 23, "title": "DISSOLUÇÃO E APURAÇÃO DE HAVERES", "lessons": [{"n": 1, "title": "Dissolução Parcial de Sociedade"}, {"n": 2, "title": "Dissolução Total de Sociedade"}, {"n": 3, "title": "Apuração de Haveres em sociedade Simples"}, {"n": 4, "title": "Apuração de Haveres"}, {"n": 5, "title": "Apuração de Haveres em Decorrência de Dissolução Conjugal"}, {"n": 6, "title": "Questões Processuais na Apuração de Haveres"}, {"n": 7, "title": "Avaliação para Fins de Apuração de Haveres nas LTDAs"}, {"n": 8, "title": "Avaliação de Bens e Aplicação de Juros de Mora na Apuração de Haveres"}, {"n": 9, "title": "Apuração e Pagamento de Haveres"}]}, {"num": 24, "title": "DOCUMENTOS SOCIETÁRIOS", "lessons": [{"n": 1, "title": "Elaboração de Contrato Social Eficiente (Parte 1)"}, {"n": 2, "title": "Elaboração de Contrato Social Eficiente (Parte 2)"}, {"n": 3, "title": "O \"Caminho das Pedras\" nos Estatutos Sociais"}, {"n": 4, "title": "MoU (Memorando de Entendimentos)"}, {"n": 5, "title": "Cláusula de Non Compete em Contratos Societários"}, {"n": 6, "title": "Joint Ventures"}, {"n": 7, "title": "Cláusulas de Acordo de Acionistas"}, {"n": 8, "title": "Contrato Social: Análise de Critérios Jurídicos e Econômicos para a Elaboração de Cláusulas Específicas"}, {"n": 9, "title": "Contrato Social"}, {"n": 10, "title": "Estatuto Social"}, {"n": 11, "title": "Acordo de Sócios"}]}, {"num": 25, "title": "FALÊNCIA", "lessons": [{"n": 1, "title": "O Novo Processo de Falência: Impactos da Lei 14.112/20"}, {"n": 2, "title": "(Im)possibilidade do Pedido de Falência como Meio de Cobrança"}, {"n": 3, "title": "Pedido de Falência pelo Fisco"}]}, {"num": 26, "title": "FUNDAMENTOS DO DIREITO SOCIETÁRIO", "lessons": [{"n": 1, "title": "Como Estruturar uma Relação Societária Capital-Trabalho"}, {"n": 2, "title": "Associações Empresariais e SPE"}, {"n": 3, "title": "Tipos Societários: Vantagens e Desvantagens Práticas"}, {"n": 4, "title": "Sociedade de Fato"}, {"n": 5, "title": "Entendendo a Verdadeira Limitação de Responsabilidade"}]}, {"num": 27, "title": "FUNDAMENTOS DOS CONTRATOS EMPRESARIAIS", "lessons": [{"n": 1, "title": "NDA (Non Disclosure Agreement)"}, {"n": 2, "title": "Acordo de Indenidade"}, {"n": 3, "title": "Revisão, Rescisão e Penalidades em Contratos Empresariais"}]}, {"num": 28, "title": "FUSÕES E AQUISIÇÕES", "lessons": [{"n": 1, "title": "Pontos Estratégicos no Processo de M&A"}, {"n": 2, "title": "Aprovação Concorrencial de Operações Societárias pelo CADE"}, {"n": 3, "title": "Cláusula de Não Concorrência em M&A's"}, {"n": 4, "title": "Estratégia de Elon Musk para Comprar o Twitter"}]}, {"num": 29, "title": "GESTÃO DE ESCRITÓRIOS DE ADVOCACIA", "lessons": [{"n": 1, "title": "Estruturação societária de Escritórios de Advocacia (Parte 1)"}, {"n": 2, "title": "Estruturação Societária de Escritórios de Advocacia (Parte 2)"}, {"n": 3, "title": "Negociação e Precificação de Honorários (Parte 1)"}, {"n": 4, "title": "Negociação e Precificação de Honorários (Parte 2)"}, {"n": 5, "title": "Negociação e Precificação de Honorários (Parte 3)"}, {"n": 6, "title": "Negociação e Precificação de Honorários (Parte 4)"}, {"n": 7, "title": "Contabilidade Básica para Advogados (Parte 1)"}, {"n": 8, "title": "Contabilidade Básica para Advogados (Parte 2)"}, {"n": 9, "title": "Pessoas | Gestão Eficiente na Advocacia"}, {"n": 10, "title": "Como Aumentar a Produtividade do Escritório | Gestão Eficiente na Advocacia"}, {"n": 11, "title": "Sistemas | Gestão Eficiente na Advocacia"}]}, {"num": 30, "title": "GOVERNANÇA SOCIETÁRIA", "lessons": [{"n": 1, "title": "Assembleia de Sócios (da Convocação à Realização)"}, {"n": 2, "title": "Invalidades Assembleares"}, {"n": 3, "title": "Funcionamento da Assembleia Geral de Credores"}, {"n": 4, "title": "A Lei 14.451 e a Modificação dos Quóruns da LTDA"}, {"n": 5, "title": "Voto Conflitante"}, {"n": 6, "title": "Distribuição de Lucros na Sociedade LTDA"}, {"n": 7, "title": "Atuação em Assembleia de Acionistas"}, {"n": 8, "title": "Distribuição de dividendos x Pro Labore: O que (não) Fazer e Como Fazer"}, {"n": 9, "title": "Apurar, Deliberar e Pagar: O Marco Temporal Decisivo da Lei 15.270/25 Sobre Dividendos"}, {"n": 10, "title": "O Novo Anonimato na S/A"}, {"n": 11, "title": "Administração de Sociedade Limitada (Parte 1)"}, {"n": 12, "title": "Administração de Sociedade Limitada (Parte 2)"}, {"n": 13, "title": "Administração de Sociedade Limitada (Parte 3)"}, {"n": 14, "title": "Administração de Sociedade Limitada (Parte 4)"}]}, {"num": 31, "title": "HOLDINGS E EMPRESAS FAMILIARES", "lessons": [{"n": 1, "title": "Acordos de Cotistas/Acionistas em Empresas Familiares"}, {"n": 2, "title": "Reestruturação Societária: O Sistema de Ampulheta"}, {"n": 3, "title": "Holding Familiar"}]}, {"num": 32, "title": "INTELIGÊNCIA ARTIFICIAL NA ADVOCACIA", "lessons": [{"n": 1, "title": "Aula de Boas-Vindas"}, {"n": 2, "title": "Módulo 1"}, {"n": 3, "title": "Módulo 2"}, {"n": 4, "title": "Módulo 3"}]}, {"num": 33, "title": "INVESTIMENTO E FINANCIAMENTO DE SOCIEDADES", "lessons": [{"n": 1, "title": "Mútuo Conversível em Participação Societária"}, {"n": 2, "title": "Meios Alternativos de Captação de Recursos para Pequenas e Médias Empresas"}, {"n": 3, "title": "Vesting"}, {"n": 4, "title": "Equity Crowdfunding"}, {"n": 5, "title": "Contrato de SAFE no Brasil"}, {"n": 6, "title": "Principais Cláusulas do Contrato de Vesting"}, {"n": 7, "title": "Formas de Investimento na LTDA"}]}, {"num": 34, "title": "MARKETING JURÍDICO", "lessons": [{"n": 1, "title": "Regras da OAB e Posicionamento Digital"}, {"n": 2, "title": "Tráfego Pago para Advogados(as)"}, {"n": 3, "title": "Comunicação e Oratória Jurídica"}, {"n": 4, "title": "Conceitos Iniciais de Marketing Jurídico"}, {"n": 5, "title": "Como Utilizar as Redes Sociais"}, {"n": 6, "title": "Google ads: A Maior Engrenagem de Prospecção de Clientes na Internet"}, {"n": 7, "title": "Criando sua Conta do Google ads na Prática"}, {"n": 8, "title": "Criando sua Primeira Campanha de Google ads na Prática"}, {"n": 9, "title": "Produção de Conteúdo em Blog e Criação de Escritório Digital"}, {"n": 10, "title": "Como Atrair Clientes Através de Artigos (Parte 1)"}, {"n": 11, "title": "Como Atrair Clientes Através de Artigos (Parte 2)"}, {"n": 12, "title": "Como Atrair Clientes Através de Artigos (Parte 3)"}]}, {"num": 35, "title": "MERCADO DE CAPITAIS E FUNDOS DE INVESTIMENTO", "lessons": [{"n": 1, "title": "Emissão de Debêntures"}, {"n": 2, "title": "Debêntures ou Notas Comerciais? O que Adotar na Sociedade Limitada"}, {"n": 3, "title": "O Novo Marco da Securitização"}, {"n": 4, "title": "Advocacia no Mercado de Capitais (Parte 1)"}, {"n": 5, "title": "Advocacia no Mercado de Capitais (Parte 2)"}, {"n": 6, "title": "Como Constituir e Estruturar Fundos de Investimentos"}, {"n": 7, "title": "O Novo Marco Regulatório dos Fundos de Investimento"}, {"n": 8, "title": "Fundos de Investimento (Parte 1)"}, {"n": 9, "title": "Fundos de Investimento (Parte 2)"}, {"n": 10, "title": "Fundos de Investimento (Parte 3)"}]}, {"num": 36, "title": "PORTUGUÊS JURÍDICO", "lessons": [{"n": 1, "title": "Introdução"}, {"n": 2, "title": "Vocabulário Jurídico"}, {"n": 3, "title": "Emprego de Algumas Expressões e Pronomes de Tratamento"}, {"n": 4, "title": "Ortografia e Regência"}, {"n": 5, "title": "Conectivos"}, {"n": 6, "title": "Partícula SE e Concordância"}, {"n": 7, "title": "Pontuação"}, {"n": 8, "title": "Pontuação: Como Fazer Referência a Dispositivos Legais + Pronomes Demonstrativos."}, {"n": 9, "title": "Vícios de Linguagem que Comprometem Seu Texto"}, {"n": 10, "title": "Vícios Textuais: Estratégias Argumentativas"}, {"n": 11, "title": "Estratégias Argumentativas; Ferramentas de Pesquisa"}]}, {"num": 37, "title": "PROPRIEDADE INDUSTRIAL", "lessons": [{"n": 1, "title": "Registro de Marcas"}, {"n": 2, "title": "Busca e Registro de Marcas na Prática"}, {"n": 3, "title": "Prova Técnica, Perícias e as Pesquisas de Mercado Nos Processos Judiciais Sobre Trade Dress"}, {"n": 4, "title": "Advocacia no Direito das Marcas"}, {"n": 5, "title": "Um Guia no Contencioso de Marcas"}, {"n": 6, "title": "Concorrência Desleal"}]}, {"num": 38, "title": "PROTEÇÃO DE DADOS", "lessons": [{"n": 1, "title": "Atuação Fiscalizatória e Processo Sancionador da ANPD"}, {"n": 2, "title": "Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 1)"}, {"n": 3, "title": "Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 2)"}, {"n": 4, "title": "Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 3)"}]}, {"num": 39, "title": "RECUPERAÇÃO EXTRAJUDICIAL E PRÉ-INSOLVÊNCIA", "lessons": [{"n": 1, "title": "Negociação Antecedente e Recuperação Extrajudicial"}, {"n": 2, "title": "Questões Práticas do Sistema de Pré-Insolvência"}, {"n": 3, "title": "Recuperação Extrajudicial"}]}, {"num": 40, "title": "RECUPERAÇÃO JUDICIAL", "lessons": [{"n": 1, "title": "Elaboração do Plano de Recuperação Judicial"}, {"n": 2, "title": "Habilitação, Divergência e Impugnação à Relação de Credores"}, {"n": 3, "title": "Recuperação Judicial do Produtor Rural"}, {"n": 4, "title": "Como Fazer uma Petição Inicial do Pedido de RJ"}, {"n": 5, "title": "DIP Financing"}, {"n": 6, "title": "Análise de Caso: Lojas Americanas"}, {"n": 7, "title": "Plano de Recuperação Judicial Alternativo, Apresentado Pelos Credores"}, {"n": 8, "title": "Cautelares Antecedentes na Recuperação Judicial"}, {"n": 9, "title": "Análise de Caso: 123 Milhas"}, {"n": 10, "title": "Novação Recuperacional"}, {"n": 11, "title": "Créditos Fiscais na Recuperação Judicial após a Lei nº 14.112/2020"}, {"n": 12, "title": "Aspectos Práticos da Administração Judicial"}, {"n": 13, "title": "Reorganizações Societárias Como Meios de Recuperação Judicial"}, {"n": 14, "title": "Abuso de Voto na Recuperação Judicial"}, {"n": 15, "title": "Prática, Precedentes e Casos na Perspectiva do Credor em processos de insolvência"}, {"n": 16, "title": "Plano Alternativo de Credores: Aspectos Polêmicos"}]}, {"num": 41, "title": "RECURSOS CÍVEIS", "lessons": [{"n": 1, "title": "Agravo de Instrumento (Parte 1)"}, {"n": 2, "title": "Agravo de Instrumento (Parte 2)"}, {"n": 3, "title": "Agravo de Instrumento (Parte 3)"}, {"n": 4, "title": "Recurso Especial (Parte 1)"}, {"n": 5, "title": "Recurso Especial (Parte 2)"}, {"n": 6, "title": "Sustentação Oral"}, {"n": 7, "title": "Memoriais e Despacho com Ministros"}]}, {"num": 42, "title": "REFORMA TRIBUTÁRIA", "lessons": [{"n": 1, "title": "Contratos e Reforma Tributária: Pontos de Atenção"}, {"n": 2, "title": "Reforma Tributária (Parte 1)"}, {"n": 3, "title": "Reforma Tributária (Parte 2)"}, {"n": 4, "title": "Holding na Reforma Tributária (Parte 1)"}, {"n": 5, "title": "Holding na Reforma Tributária (Parte 2)"}, {"n": 6, "title": "Holding na Reforma Tributária (Parte 3)"}, {"n": 7, "title": "Holding na Reforma Tributária (Parte 4)"}, {"n": 8, "title": "Holding na Reforma Tributária (Parte 5)"}, {"n": 9, "title": "Reforma Tributária Sobre o Consumo"}, {"n": 10, "title": "Reforma Tributária Sobre a Renda"}, {"n": 11, "title": "Reforma Tributária Sobre o Patrimônio"}, {"n": 12, "title": "Reforma Tributária para Advocacia Empresarial - Serviços e Oportunidades"}]}, {"num": 43, "title": "REGISTRO EMPRESARIAL", "lessons": [{"n": 1, "title": "Resolução de Conflitos Societários nas Juntas Comerciais Aspectos Práticos"}, {"n": 2, "title": "Registro de Empresas"}, {"n": 3, "title": "IN DREI nº 88/2022"}, {"n": 4, "title": "Publicidade Obrigatória das S/A na Prática"}, {"n": 5, "title": "Arquivamento de Atos Empresariais e Processo Revisional Nas Juntas Comerciais (IN DREI N. 81/2020 e Alterações)"}, {"n": 6, "title": "Como Preencher Os Livros Societários"}, {"n": 7, "title": "Inova Simples"}, {"n": 8, "title": "Tratamento Jurídico Dado à Fraude de Terceiros Levadas a Registro nas Juntas Comerciais"}, {"n": 9, "title": "Registro Empresarial como Ferramenta de Blindagem Societária"}, {"n": 10, "title": "IN nº 01/24, do DREI"}, {"n": 11, "title": "Processo de Legalização de Empresas: Uma Visão Contábil"}, {"n": 12, "title": "Aspectos Jurídicos e Práticos da Atuação do MEI"}, {"n": 13, "title": "Resolução de Conflitos Nas Juntas Comerciais e No DREI"}, {"n": 14, "title": "Aspectos Registrais da Dissolução Parcial de Sociedade"}]}, {"num": 44, "title": "TRANSAÇÃO TRIBUTÁRIA", "lessons": [{"n": 1, "title": "Por que transacionar? Fundamentos e evolução da cobrança tributária"}, {"n": 2, "title": "A transação de crédito tributário federal"}, {"n": 3, "title": "Transação Tributária"}]}];
-const root=document.getElementById('modules'),stats=document.getElementById('stats'),search=document.getElementById('search');const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();function draw(){const q=norm(search.value.trim());root.replaceChildren();let count=0,lessons=0;modules.forEach(m=>{const matchModule=norm(m.title+' modulo '+m.num).includes(q);const shown=matchModule?m.lessons:m.lessons.filter(l=>norm(l.title).includes(q));if(q&&!matchModule&&!shown.length)return;count++;lessons+=shown.length;const d=document.createElement('details');d.className='module';d.open=!!q;const sum=document.createElement('summary');const number=document.createElement('span');number.className='number';number.textContent='MÓDULO '+String(m.num).padStart(2,'0');const meta=document.createElement('div');meta.className='meta';const title=document.createElement('div');title.className='name';title.textContent=m.title;const qty=document.createElement('div');qty.className='count';qty.textContent=m.lessons.length+' '+(m.lessons.length===1?'item':'itens');meta.append(title,qty);const arrow=document.createElement('span');arrow.className='arrow';arrow.textContent='⌄';sum.append(number,meta,arrow);d.append(sum);const body=document.createElement('div');body.className='lessons';shown.forEach(l=>{const line=document.createElement('div');line.className='lesson';const num=document.createElement('span');num.className='lessonnum';num.textContent=String(l.n).padStart(2,'0');const txt=document.createElement('span');txt.className='lessonname';txt.textContent=l.title;line.append(num,txt);body.append(line)});d.append(body);root.append(d)});stats.textContent=count+' módulos exibidos · '+lessons+' itens';if(!count){const e=document.createElement('div');e.className='empty';e.textContent='Nenhum módulo ou aula encontrado.';root.append(e)}}search.addEventListener('input',draw);document.getElementById('expand').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=true);document.getElementById('collapse').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=false);draw();</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EFAE | Guia de Módulos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#C6A47E;
+    --on-gold:#2A2119;
+    --cover-a:#33281C;
+    --cover-b:#0D0B09;
+    --bg:#FFFFFF;
+    --surface:#FFFFFF;
+    --surface-2:#FBF7F2;
+    --ink:#2A2119;
+    --muted:#7A6A5A;
+    --line:#DCC5A8;
+    --row-line:#E2CDB2;
+    --mark:#F0DEC4;
+    --coll-head:#2E241A;
+    --coll-ink:#D9BC97;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14100C; --surface:#1D1712; --surface-2:#211A14; --ink:#EEE4D7; --muted:#A39282;
+      --line:#5E4A35; --row-line:#45362A; --mark:#6A4E2F; --coll-head:#0C0907; --coll-ink:#D9BC97;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14100C; --surface:#1D1712; --surface-2:#211A14; --ink:#EEE4D7; --muted:#A39282;
+    --line:#5E4A35; --row-line:#45362A; --mark:#6A4E2F; --coll-head:#0C0907; --coll-ink:#D9BC97;
+    color-scheme:dark;
+  }
+
+  :root{
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *,*::before,*::after{box-sizing:inherit}
+  html{
+    background:#1A1510;
+    scroll-padding-top:calc(env(safe-area-inset-top,0px) + 96px);
+    -webkit-text-size-adjust:100%;
+  }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+    line-height:1.5;
+  }
+  img,svg{max-width:100%}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+  /* ---------- Capa ---------- */
+  .cover{
+    background:
+      radial-gradient(120% 90% at 12% 0%, #3C2F21 0%, rgba(60,47,33,0) 62%),
+      linear-gradient(165deg, var(--cover-a) 0%, var(--cover-b) 100%);
+    color:var(--gold);
+    text-align:center;
+    padding:clamp(44px,8vw,96px) 20px clamp(40px,6vw,72px);
+  }
+  .logo{
+    display:inline-block;
+    width:clamp(176px,26vw,240px);
+    border:1px solid var(--gold);
+  }
+  .logo-mark{padding:15% 13% 11%}
+  .logo-mark svg{display:block;width:100%;height:auto}
+  .logo-band{
+    background:var(--gold);
+    color:#2A2119;
+    font-weight:600;
+    font-size:clamp(8.6px,1.2vw,11.6px);
+    line-height:1.35;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    padding:.8em .5em;
+  }
+  .title{margin:clamp(40px,7vw,80px) 0 0;line-height:.94;text-transform:uppercase;font-size:inherit}
+  .title .l1{display:block;font-weight:200;font-size:clamp(46px,9.6vw,114px);letter-spacing:.01em}
+  .title .l2{display:block;font-weight:800;font-size:clamp(56px,11.8vw,140px);letter-spacing:-.012em}
+  .school{
+    margin:clamp(18px,2.6vw,28px) 0 0;
+    color:#F3ECE3;
+    font-size:clamp(11.5px,1.55vw,16px);
+    font-weight:400;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+  }
+  .prof{
+    margin:clamp(30px,5vw,56px) 0 0;
+    color:#F3ECE3;
+    font-size:clamp(13px,1.4vw,15px);
+    font-weight:300;
+    text-transform:uppercase;
+  }
+  .prof b{font-weight:700}
+
+  /* ---------- Barra de busca ---------- */
+  .searchbar{
+    position:sticky;
+    top:env(safe-area-inset-top,0px);
+    z-index:10;
+    background:#16110D;
+    border-bottom:1px solid rgba(198,164,126,.38);
+    padding:14px 20px;
+  }
+  .search-inner{
+    max-width:1180px;margin:0 auto;
+    display:flex;align-items:center;gap:10px 20px;flex-wrap:wrap;
+  }
+  .field{
+    flex:1 1 340px;
+    position:relative;
+    display:flex;align-items:center;
+    border:1px solid var(--gold);
+    background:#0E0B08;
+  }
+  .field:focus-within{box-shadow:0 0 0 1px var(--gold)}
+  .field .ico{position:absolute;left:15px;width:18px;height:18px;color:var(--gold);pointer-events:none}
+  .field input{
+    flex:1;min-width:0;
+    appearance:none;border:0;background:transparent;
+    color:#F3ECE3;font:inherit;font-size:16px;
+    padding:13px 48px 13px 46px;
+  }
+  .field input::placeholder{color:#8E7E6C}
+  .field input:focus{outline:none}
+  .field input::-webkit-search-cancel-button{display:none}
+  .clear{
+    position:absolute;right:6px;
+    width:36px;height:36px;
+    display:none;align-items:center;justify-content:center;
+    appearance:none;border:0;background:transparent;color:var(--gold);cursor:pointer;
+  }
+  .clear.show{display:flex}
+  .clear svg{width:16px;height:16px}
+  .summary{color:#C2B29F;font-size:13.5px;margin:0}
+  .summary strong{color:#F3ECE3;font-weight:600}
+
+  .bulk-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .bulk-actions button{font:inherit;font-size:13px;font-weight:600;padding:12px 15px;cursor:pointer;background:transparent;color:#F3ECE3;border:1px solid var(--gold);border-radius:9px;white-space:nowrap}
+  .bulk-actions button:hover{background:var(--gold);color:var(--on-gold)}
+  .panel > section + section{border-top:2px solid var(--gold);margin-top:18px}
+  @media(max-width:560px){.bulk-actions{width:100%}.bulk-actions button{flex:1;padding:10px 8px;font-size:12px}}
+
+  /* Visualização sequencial ao expandir todos */
+  .grid.list-mode{display:flex;flex-direction:column;gap:0}
+  .grid.list-mode > .card{display:none}
+  .grid.list-mode > .panel{margin:0 0 18px;padding-bottom:18px}
+  .grid.list-mode > .panel::before{display:none}
+  .grid.list-mode .rows{columns:1}
+  .grid.list-mode .panel > section + section{margin-top:0}
+  /* ---------- Galeria ---------- */
+  main{max-width:1180px;margin:0 auto;padding:clamp(28px,4vw,48px) 20px clamp(48px,7vw,80px)}
+  .grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(232px,1fr));
+    gap:16px;
+  }
+  .card{
+    appearance:none;font:inherit;color:inherit;text-align:left;cursor:pointer;
+    margin:0;padding:0;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:2px;
+    display:flex;flex-direction:column;
+    min-height:184px;
+    transition:border-color .15s ease;
+  }
+  .card:hover{border-color:var(--gold)}
+  .card-head{
+    background:var(--gold);color:var(--on-gold);
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:12px 16px;
+    font-weight:700;font-size:13px;letter-spacing:.02em;text-transform:uppercase;
+  }
+  .card.coll .card-head{background:var(--coll-head);color:var(--coll-ink)}
+  .plus{width:14px;height:14px;flex:0 0 14px;transition:transform .2s ease}
+  .card-body{flex:1;display:flex;flex-direction:column;gap:6px;padding:16px 16px 14px}
+  .card-tag{font-size:12px;font-weight:500;color:var(--muted)}
+  .card-title{font-weight:700;font-size:14.5px;line-height:1.36;text-transform:uppercase;color:var(--ink);overflow-wrap:anywhere}
+  .card-foot{
+    margin-top:auto;padding-top:12px;
+    border-top:1px solid var(--row-line);
+    font-size:13px;color:var(--muted);
+  }
+  .card-foot strong{color:var(--ink);font-weight:600}
+  .card[aria-expanded="true"]{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+  .card[aria-expanded="true"] .plus{transform:rotate(45deg)}
+
+  /* ---------- Progresso das aulas ---------- */
+  .lesson-check{display:flex;align-items:center;gap:12px;width:100%;cursor:pointer}
+  .lesson-done{width:19px;height:19px;flex:0 0 19px;accent-color:#947049;cursor:pointer}
+  .lesson-content{min-width:0;flex:1}
+  .row.done .lesson-title{text-decoration:line-through;opacity:.58}
+  .row.done .rt{background:var(--surface-2)}
+  .progress-count{display:block;margin-top:5px;font-size:12px;color:var(--muted)}
+  /* ---------- Progresso geral ---------- */
+  .overall{margin-bottom:28px;padding:24px;border:1px solid var(--line);background:var(--surface-2);border-radius:6px}
+  .overall-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .overall h2{font-size:20px;margin:0;color:var(--ink)}
+  .overall p{margin:6px 0 0;color:var(--muted);font-size:13px}
+  .overall-percent{font-size:30px;font-weight:700;color:var(--ink)}
+  .overall-track{height:14px;background:var(--row-line);border-radius:20px;overflow:hidden;margin-top:18px}
+  .overall-fill{height:100%;width:0;background:var(--gold);border-radius:20px;transition:width .25s ease}
+  .overall-stats{display:flex;gap:20px;flex-wrap:wrap;margin-top:13px;font-size:13px;color:var(--muted)}
+  .overall-stats strong{color:var(--ink)}
+  /* ---------- Painel de aulas ---------- */
+  .panel{
+    grid-column:1 / -1;
+    position:relative;
+    margin-top:4px;
+    background:var(--surface-2);
+    border:1px solid var(--gold);
+    padding-bottom:18px;
+  }
+  .panel::before{
+    content:"";position:absolute;top:-8px;
+    left:calc(var(--nx,50%) - 8px);
+    width:15px;height:15px;background:var(--gold);transform:rotate(45deg);
+  }
+  .panel.enter{animation:panelIn .22s ease-out}
+  @keyframes panelIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .panel-head{
+    position:relative;z-index:1;
+    background:var(--gold);color:var(--on-gold);
+    display:flex;align-items:center;gap:18px;
+    padding:16px 20px;
+    font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.01em;
+  }
+  .ph-mod{white-space:nowrap}
+  .ph-div{width:1px;height:30px;background:var(--on-gold);opacity:.75;transform:rotate(12deg);flex:0 0 1px}
+  .ph-title{flex:1;min-width:0}
+  .module-complete{
+    appearance:none;font:inherit;font-size:12px;font-weight:600;
+    border:1px solid rgba(42,33,25,.5);background:rgba(255,255,255,.18);
+    color:var(--on-gold);padding:8px 11px;border-radius:3px;cursor:pointer;
+    margin-left:auto;white-space:normal;text-align:center;
+  }
+  .module-complete:hover{background:rgba(255,255,255,.42)}
+  .panel-close{
+    appearance:none;font:inherit;font-size:12.5px;font-weight:600;text-transform:none;letter-spacing:0;
+    display:flex;align-items:center;gap:6px;
+    background:transparent;color:var(--on-gold);
+    border:1px solid rgba(42,33,25,.45);border-radius:2px;
+    padding:7px 12px;cursor:pointer;
+  }
+  .panel-close:hover{background:rgba(42,33,25,.08)}
+  .panel-close svg{width:12px;height:12px}
+  .rows{list-style:none;margin:0;padding:18px 20px 0;columns:2;column-gap:20px}
+  .row{break-inside:avoid;display:flex;min-height:42px;margin:0 0 8px}
+  .rn{
+    flex:0 0 48px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--gold);color:var(--on-gold);
+    font-weight:700;font-size:13px;
+  }
+  .rt{
+    flex:1;display:flex;align-items:center;
+    background:var(--surface);
+    border:1px solid var(--row-line);border-left:0;
+    padding:9px 14px;
+    font-weight:600;font-size:13.5px;line-height:1.42;
+    overflow-wrap:anywhere;
+  }
+  .row.dim{opacity:.42}
+  mark{background:var(--mark);color:inherit;padding:0 .08em;border-radius:1px}
+
+  .lesson-content{display:flex;flex-direction:column;gap:3px;width:100%}
+  .teacher{font-size:11.5px;font-weight:400;color:var(--muted);line-height:1.4}
+  /* ---------- Vazio ---------- */
+  .empty{text-align:center;padding:56px 20px 24px;color:var(--muted);max-width:520px;margin:0 auto}
+  .empty h2{color:var(--ink);font-size:19px;font-weight:600;margin:0 0 8px}
+  .empty p{margin:0 0 22px}
+  .btn-reset{
+    appearance:none;font:inherit;font-weight:600;font-size:14px;
+    background:var(--gold);color:var(--on-gold);
+    border:0;border-radius:2px;padding:11px 20px;cursor:pointer;
+  }
+
+  /* ---------- Rodapé ---------- */
+  .foot{background:#110D0A;color:#E9E0D4;padding:26px 20px}
+  .foot-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .foot svg{width:86px;height:auto;display:block}
+  .foot p{margin:0;font-size:13.5px;font-weight:300;text-transform:uppercase}
+  .foot b{font-weight:700}
+
+  @media (max-width:820px){
+    .rows{columns:1}
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .card{min-height:164px}
+    .card-head{padding:10px 12px;font-size:11.5px}
+    .card-body{padding:12px 12px 11px}
+    .card-title{font-size:12.5px}
+    .card-foot{font-size:12px}
+    .panel-head{flex-wrap:wrap;gap:6px 12px;padding:14px 16px;font-size:13px}
+    .ph-div{display:none}
+    .ph-title{flex-basis:100%;order:3}
+    .ph-mod{flex:1}
+    .module-complete{order:4;flex:1 1 100%}
+    .rows{padding:14px 12px 0}
+    .rn{flex-basis:40px}
+    .rt{font-size:13px;padding:9px 11px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .panel.enter{animation:none}
+    .plus,.card{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="logo" role="img" aria-label="EFAE, Escola de Formação em Advocacia Empresarial">
+    <div class="logo-mark">
+      <svg viewBox="0 0 300 80" aria-hidden="true" fill="#C6A47E">
+        <rect x="0" y="0" width="13" height="80"/><rect x="0" y="0" width="60" height="13"/><rect x="0" y="33.5" width="52" height="13"/><rect x="0" y="67" width="60" height="13"/>
+        <rect x="80" y="0" width="13" height="80"/><rect x="80" y="0" width="56" height="13"/><rect x="80" y="33.5" width="48" height="13"/>
+        <polygon points="179.5,0 192.5,0 227,80 213,80 186,17 159,80 145,80"/>
+        <rect x="240" y="0" width="13" height="80"/><rect x="240" y="0" width="60" height="13"/><rect x="240" y="33.5" width="52" height="13"/><rect x="240" y="67" width="60" height="13"/>
+      </svg>
+    </div>
+    <div class="logo-band">Escola de Formação em<br>Advocacia Empresarial</div>
+  </div>
+  <h1 class="title"><span class="l1">Guia de</span><span class="l2">Módulos</span></h1>
+  <p class="school">Escola de Formação em Advocacia Empresarial</p>
+  <p class="prof">Prof. <b>André</b> Santa <b>Cruz</b></p>
+</header>
+
+<div class="searchbar">
+  <div class="search-inner">
+    <label class="field">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+      <span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar módulo, aula ou professor</span>
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Busque por módulo, aula ou nome do professor">
+      <button class="clear" id="clear" type="button" aria-label="Limpar busca">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </label>
+    <div class="bulk-actions"><button id="expandAll" type="button">Expandir todos</button><button id="collapseAll" type="button">Recolher todos</button></div>
+    <p class="summary" id="summary" aria-live="polite"></p>
+  </div>
+</div>
+
+<main>
+  <section class="overall" aria-label="Progresso geral dos estudos">
+    <div class="overall-top"><div><h2>Seu progresso na EFAE</h2><p>Marque aqui as aulas que você já assistiu na plataforma e acompanhe seu progresso por aqui. As marcações são feitas manualmente e não são sincronizadas com o progresso da Hotmart.</p></div><strong class="overall-percent" id="overallPercent">0%</strong></div>
+    <div class="overall-track" id="overallTrack" role="progressbar" aria-label="Aulas concluídas" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="overall-fill" id="overallFill"></div></div>
+    <div class="overall-stats"><span><strong id="overallDone">0</strong> aulas concluídas</span><span><strong id="overallRemaining">0</strong> aulas restantes</span><span><strong id="overallTotal">0</strong> aulas no total</span></div>
+  </section>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" hidden>
+    <h2>Nenhum módulo ou aula encontrado</h2>
+    <p id="emptyMsg">Confira a grafia ou tente um termo mais curto, como “Pablo Arruda” ou “holding”.</p>
+    <button class="btn-reset" id="reset" type="button">Limpar busca</button>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <svg viewBox="0 0 300 80" aria-label="EFAE" role="img" fill="#C6A47E">
+      <rect x="0" y="0" width="13" height="80"/><rect x="0" y="0" width="60" height="13"/><rect x="0" y="33.5" width="52" height="13"/><rect x="0" y="67" width="60" height="13"/>
+      <rect x="80" y="0" width="13" height="80"/><rect x="80" y="0" width="56" height="13"/><rect x="80" y="33.5" width="48" height="13"/>
+      <polygon points="179.5,0 192.5,0 227,80 213,80 186,17 159,80 145,80"/>
+      <rect x="240" y="0" width="13" height="80"/><rect x="240" y="0" width="60" height="13"/><rect x="240" y="33.5" width="52" height="13"/><rect x="240" y="67" width="60" height="13"/>
+    </svg>
+    <p>Prof. <b>André</b> Santa <b>Cruz</b></p>
+  </div>
+</footer>
+
+<script>
+const DATA = [
+["Advocacia Empresarial e Desenvolvimento Profissional",[
+"Aula magna | Advocacia empresarial: passado, presente e futuro",
+"Como iniciar (e evoluir) na carreira da advocacia empresarial",
+"Advocacia para Startups",
+"Como assessorar empresas que vendem para a Administração Pública",
+"O impacto da regulamentação dos jogos no ordenamento jurídico brasileiro",
+"Direito Penal como instrumento para encerrar conflitos societários",
+"Técnicas de negociação eficiente",
+"Persuasão na reunião",
+"Hotseat | Academia e Advocacia"]],
+["Advocacia no STJ",[
+"A advocacia no STJ (Parte 1)",
+"A advocacia no STJ (Parte 2)",
+"A advocacia no STJ (Parte 3)",
+"A advocacia no STJ (Parte 4)",
+"Recursos | Instância extraordinária: Introdução; Recurso Especial",
+"Recursos | Instância extraordinária: Recurso Especial (Parte 1)",
+"Recursos | Instância extraordinária: Recurso Especial (Parte 2)",
+"Recursos | Instância extraordinária: Recurso Especial (Parte 3)",
+"Recursos | Instância extraordinária: Recurso Especial (Parte 4)",
+"Recursos | Instância extraordinária: Agravo em Recurso Especial; Recursos “operacionais”; Agravo Interno",
+"Recursos “Operacionais”: Embargos de declaração (Parte 1)",
+"Recursos “Operacionais”: Embargos de declaração (Parte 2)",
+"Recursos “Operacionais”: Embargos de divergência; Recursos | Duplo Grau: Recurso Ordinário",
+"Recursos | Duplo grau: Recurso Ordinário; Incidentes",
+"Incidentes | Ações originárias"]],
+["Cobrança e Execução Empresarial",[
+"Ações cambiais: execução, monitória, defesas",
+"Penhora de Quotas",
+"Defesa em Ações Cambiais",
+"Penhora de Stock Options",
+"Penhora de Criptoativos",
+"Capital social declarado x capital social integralizado: efeitos práticos na execução",
+"Embargos de terceiro",
+"Penhora do faturamento de empresa",
+"Cobrança de dívidas: ação monitória e execução de títulos executivos extrajudiciais"]],
+["Coleção | Conteúdos Extras",[
+"Simulado EFAE"]],
+["Coleção | Modelos de Contencioso Empresarial",[
+"Ação de Dissolução Parcial por Exclusão",
+"Ação de Reconhecimento de Sociedade c.c Dissolução",
+"Inicial | Ação de Prestação de Contas - SCP",
+"Inicial modelo"]],
+["Coleção | Modelos de Investimento e Financiamento",[
+"Contrato de Vesting",
+"Modelo de Escritura de Emissão Debentures",
+"PMZ mútuo conversível template",
+"escritura-sul-america-s-a"]],
+["Coleção | Modelos de Recuperação e Insolvência",[
+"Habilitação Tempestiva de Crédito",
+"INICIAL - unimed",
+"Apelação Figueirense",
+"Figueirense | Plano de RE (v.final)",
+"Figueirense - Pet Homologacao do PRE (v. autuada)"]],
+["Coleção | Modelos para Escritórios de Advocacia",[
+"Contratos de Parceria e Indicação em Prestação de Serviços Jurídicos",
+"Contrato de Honorários para Contencioso",
+"Memorandum of Understanding (MoU) - PARCERIA",
+"Plano de carreira de advogados - Modelo exemplificativo"]],
+["Coleção | Modelos Societários",[
+"Acordo de Acionistas",
+"Acordo de Quotistas PJ Médicos",
+"ACORDO+HOLDING+PATRIMONIAL",
+"Alteração Contratual Post Mortem de Sócio",
+"Cláusulas Societárias",
+"Modelo de Contrato Social - PJ Médicos",
+"Modelo transformação LTDA em S.A",
+"Retirada de sócio após notificação",
+"Acordo de Quotista",
+"Contrato Social com sócios de serviço"]],
+["Compliance",[
+"Compliance e Direito do Consumidor: a importância da integridade nas relações consumeristas",
+"Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 1)",
+"Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 2)",
+"Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 3)",
+"Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 4)",
+"Redação de Código de Conduta e Ética e Gestão de Canal de Escuta"]],
+["Conflitos Societários",[
+"A Responsabilidade do Ex-sócio",
+"Exclusão Extrajudicial de Sócios",
+"Exclusão de Sócio: Estratégias e Liminares",
+"Cláusula de Shotgun",
+"Liminares e Ações não Contenciosas Estratégicas",
+"Exclusão de Sócio"]],
+["Contencioso Empresarial",[
+"Ação de Responsabilidade por Abuso do Controlador",
+"Negócios Jurídicos Processuais",
+"Intervenção judicial em Conflitos Societários",
+"Ação de Responsabilidade do art. 246, da Lei 6.404/76",
+"Solução de Disputas no Contencioso Estratégico Empresarial",
+"Arbitragem: Principais Temas",
+"Ação de Reconhecimento de Sociedade de Fato",
+"Ação de Exigir Contas",
+"Aspectos Práticos da Advocacia em Leilões de Imóveis",
+"Negócio Jurídico Processual Aplicado aos Contratos Empresariais: Limites e Possibilidades",
+"Ação Indenizatória por Violação de Segredo de Negócio",
+"Ação Renovatória de Locação: Requisitos e Prazos Fatais para Garantir a Permanência da Empresa no Ponto Comercial",
+"Impactos Processuais na Lei 14.195/21",
+"Técnicas de Litigância",
+"Intervenção Judicial em Conflitos Societários (Parte 1)",
+"Intervenção Judicial em Conflitos Societários (Parte 2)",
+"Intervenção Judicial em Conflitos Societários (Parte 3)"]],
+["Contratos da Economia Digital e Criativa",[
+"Influenciadores Digitais: Aspectos Jurídicos",
+"Contratos com Streamers e Plataformas de Streaming",
+"Contrato de Media for Equity",
+"Contratos de Coprodução de Curso Online",
+"Contrato de Naming Rights",
+"Requerimento de Remoção de Conteúdo Ilícito em Redes Sociais à Luz do Tema 987, do STF"]],
+["Contratos Empresariais em Espécie",[
+"Cessão de Quotas x Trespasse: Diferenças, Requisitos e Efeitos",
+"Implementação do Sistema de Franquias",
+"Seguros Empresariais",
+"Sociedade em Conta de Participação (SCP)",
+"Seguro de Responsabilidade Civil para Empresas e Profissionais de Saúde",
+"Contrato de Built to Suit",
+"Contratos de Colaboração"]],
+["Criptoativos, Blockchain e Tokenização",[
+"Contratos com Prestadores de Serviços de Ativos Virtuais",
+"Marco Legal dos Criptoativos",
+"Advocacia no Mercado de Criptoativos",
+"Aplicação da Blockchain na Advocacia Empresarial",
+"Tokenização de valor mobiliário via Resolução CVM 88"]],
+["Desconsideração da Personalidade Jurídica",[
+"A Desconsideração da Personalidade Jurídica nos Processos de Insolvência",
+"A Defesa do Sócio/Administrador de Sociedade Empresária na Execução Fiscal",
+"Desconsideração da Personalidade Jurídica",
+"O Fim da Teoria Menor da Desconsideração (Parte 1)",
+"O Fim da Teoria Menor da Desconsideração (Parte 2)",
+"O Fim da Teoria Menor da Desconsideração (Parte 3)",
+"Defesa da PJ em Incidentes de Desconsideração",
+"Ações de Desconsideração da PJ",
+"Incidente de Desconsideração da Personalidade Jurídica",
+"Alterações na Desconsideração da Personalidade Jurídica"]],
+["Direito Cooperativo e Cooperativismo",[
+"Direito Cooperativo e Cooperativismo (Parte 1)",
+"Direito Cooperativo e Cooperativismo (Parte 2)",
+"Direito Cooperativo e Cooperativismo (Parte 3)",
+"Direito Cooperativo e Cooperativismo (Parte 4)"]],
+["Direito Desportivo Empresarial",[
+"Aspectos Práticos da SAF I (Lei 14.193/2021)",
+"Aspectos Societários dos Clubes-Empresa e das SAFs",
+"Questões práticas sobre M&As de SAFs",
+"SAF e Recuperação Judicial de Clubes de Futebol (Parte 1)",
+"SAF e Recuperação Judicial de Clubes de Futebol (Parte 2)",
+"SAF e Recuperação Judicial de Clubes de Futebol (Parte 3)",
+"Fair Play Financeiro"]],
+["Direito do Agronegócio",[
+"Contratos do Agronegócio",
+"Crédito Rural e Sistema Privado de Financiamento do Agronegócio",
+"Advocacia Empresarial no Agronegócio (Parte 1)",
+"Advocacia Empresarial no Agronegócio (Parte 2)"]],
+["Direito do Trabalho Empresarial",[
+"O Que a Regra que Bane Cláusula de Não Concorrência com Trabalhadores nos EUA Pode Sinalizar Para as Empresas no Brasil",
+"Princípios | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 1)",
+"Relação de Emprego x Pejotização | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 2)",
+"Casos Frequentes em Empresas | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 3)",
+"Riscos Psicossociais: O Novo Capítulo da NR-1 que o Empresário (e o Advogado Dele) Precisa Entender | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 4)"]],
+["Direito no Mercado Financeiro",[
+"Novo Marco Legal das Garantias",
+"Estrutura jurídica dos produtos bancários e do crédito no Mercado Financeiro",
+"Bancos Públicos, Financiamento ao Desenvolvimento e Política de Crédito",
+"Câmbio, Stablecoins e Inovação Regulatória no Mercado Financeiro",
+"Proteção de Dados no Mercado Financeiro",
+"Contencioso estratégico no Mercado Financeiro",
+"Propriedade Intelectual no Mercado Financeiro"]],
+["Direito Tributário Empresarial",[
+"Aspectos da Carga Tributária no Mundo e no Brasil (Parte 1)",
+"Aspectos da Carga Tributária no Mundo e no Brasil (Parte 2)",
+"Aspectos da Carga Tributária no Mundo e no Brasil (Parte 3)",
+"Aspectos da Carga Tributária no Mundo e no Brasil (Parte 4)",
+"Aspectos Tributários da Integralização de Capital Social (Parte 1)",
+"Aspectos Tributários da Integralização de Capital Social (Parte 2)"]],
+["Dissolução e Apuração de Haveres",[
+"Dissolução Parcial de Sociedade",
+"Dissolução Total de Sociedade",
+"Apuração de Haveres em sociedade Simples",
+"Apuração de Haveres",
+"Apuração de Haveres em Decorrência de Dissolução Conjugal",
+"Questões Processuais na Apuração de Haveres",
+"Avaliação para Fins de Apuração de Haveres nas LTDAs",
+"Avaliação de Bens e Aplicação de Juros de Mora na Apuração de Haveres",
+"Apuração e Pagamento de Haveres"]],
+["Documentos Societários",[
+"Elaboração de Contrato Social Eficiente (Parte 1)",
+"Elaboração de Contrato Social Eficiente (Parte 2)",
+"O “Caminho das Pedras” nos Estatutos Sociais",
+"MoU (Memorando de Entendimentos)",
+"Cláusula de Non Compete em Contratos Societários",
+"Joint Ventures",
+"Cláusulas de Acordo de Acionistas",
+"Contrato Social: Análise de Critérios Jurídicos e Econômicos para a Elaboração de Cláusulas Específicas",
+"Contrato Social",
+"Estatuto Social",
+"Acordo de Sócios"]],
+["Falência",[
+"O Novo Processo de Falência: Impactos da Lei 14.112/20",
+"(Im)possibilidade do Pedido de Falência como Meio de Cobrança",
+"Pedido de Falência pelo Fisco"]],
+["Fundamentos do Direito Societário",[
+"Como Estruturar uma Relação Societária Capital-Trabalho",
+"Associações Empresariais e SPE",
+"Tipos Societários: Vantagens e Desvantagens Práticas",
+"Sociedade de Fato",
+"Entendendo a Verdadeira Limitação de Responsabilidade"]],
+["Fundamentos dos Contratos Empresariais",[
+"NDA (Non Disclosure Agreement)",
+"Acordo de Indenidade",
+"Revisão, Rescisão e Penalidades em Contratos Empresariais"]],
+["Fusões e Aquisições",[
+"Pontos Estratégicos no Processo de M&A",
+"Aprovação Concorrencial de Operações Societárias pelo CADE",
+"Cláusula de Não Concorrência em M&A's",
+"Estratégia de Elon Musk para Comprar o Twitter"]],
+["Gestão de Escritórios de Advocacia",[
+"Estruturação societária de Escritórios de Advocacia (Parte 1)",
+"Estruturação Societária de Escritórios de Advocacia (Parte 2)",
+"Negociação e Precificação de Honorários (Parte 1)",
+"Negociação e Precificação de Honorários (Parte 2)",
+"Negociação e Precificação de Honorários (Parte 3)",
+"Negociação e Precificação de Honorários (Parte 4)",
+"Contabilidade Básica para Advogados (Parte 1)",
+"Contabilidade Básica para Advogados (Parte 2)",
+"Pessoas | Gestão Eficiente na Advocacia",
+"Como Aumentar a Produtividade do Escritório | Gestão Eficiente na Advocacia",
+"Sistemas | Gestão Eficiente na Advocacia"]],
+["Governança Societária",[
+"Assembleia de Sócios (da Convocação à Realização)",
+"Invalidades Assembleares",
+"Funcionamento da Assembleia Geral de Credores",
+"A Lei 14.451 e a Modificação dos Quóruns da LTDA",
+"Voto Conflitante",
+"Distribuição de Lucros na Sociedade LTDA",
+"Atuação em Assembleia de Acionistas",
+"Distribuição de dividendos x Pro Labore: O que (não) Fazer e Como Fazer",
+"Apurar, Deliberar e Pagar: O Marco Temporal Decisivo da Lei 15.270/25 Sobre Dividendos",
+"O Novo Anonimato na S/A",
+"Administração de Sociedade Limitada (Parte 1)",
+"Administração de Sociedade Limitada (Parte 2)",
+"Administração de Sociedade Limitada (Parte 3)",
+"Administração de Sociedade Limitada (Parte 4)"]],
+["Holdings e Empresas Familiares",[
+"Acordos de Cotistas/Acionistas em Empresas Familiares",
+"Reestruturação Societária: O Sistema de Ampulheta",
+"Holding Familiar"]],
+["Inteligência Artificial na Advocacia",[
+"Aula de Boas-Vindas",
+"Módulo 1",
+"Módulo 2",
+"Módulo 3"]],
+["Investimento e Financiamento de Sociedades",[
+"Mútuo Conversível em Participação Societária",
+"Meios Alternativos de Captação de Recursos para Pequenas e Médias Empresas",
+"Vesting",
+"Equity Crowdfunding",
+"Contrato de SAFE no Brasil",
+"Principais Cláusulas do Contrato de Vesting",
+"Formas de Investimento na LTDA"]],
+["Marketing Jurídico",[
+"Regras da OAB e Posicionamento Digital",
+"Tráfego Pago para Advogados(as)",
+"Comunicação e Oratória Jurídica",
+"Conceitos Iniciais de Marketing Jurídico",
+"Como Utilizar as Redes Sociais",
+"Google ads: A Maior Engrenagem de Prospecção de Clientes na Internet",
+"Criando sua Conta do Google ads na Prática",
+"Criando sua Primeira Campanha de Google ads na Prática",
+"Produção de Conteúdo em Blog e Criação de Escritório Digital",
+"Como Atrair Clientes Através de Artigos (Parte 1)",
+"Como Atrair Clientes Através de Artigos (Parte 2)",
+"Como Atrair Clientes Através de Artigos (Parte 3)"]],
+["Mercado de Capitais e Fundos de Investimento",[
+"Emissão de Debêntures",
+"Debêntures ou Notas Comerciais? O que Adotar na Sociedade Limitada",
+"O Novo Marco da Securitização",
+"Advocacia no Mercado de Capitais (Parte 1)",
+"Advocacia no Mercado de Capitais (Parte 2)",
+"Como Constituir e Estruturar Fundos de Investimentos",
+"O Novo Marco Regulatório dos Fundos de Investimento",
+"Fundos de Investimento (Parte 1)",
+"Fundos de Investimento (Parte 2)",
+"Fundos de Investimento (Parte 3)"]],
+["Português Jurídico",[
+"Introdução",
+"Vocabulário Jurídico",
+"Emprego de Algumas Expressões e Pronomes de Tratamento",
+"Ortografia e Regência",
+"Conectivos",
+"Partícula SE e Concordância",
+"Pontuação",
+"Pontuação: Como Fazer Referência a Dispositivos Legais + Pronomes Demonstrativos",
+"Vícios de Linguagem que Comprometem Seu Texto",
+"Vícios Textuais: Estratégias Argumentativas",
+"Estratégias Argumentativas; Ferramentas de Pesquisa"]],
+["Propriedade Industrial",[
+"Registro de Marcas",
+"Busca e Registro de Marcas na Prática",
+"Prova Técnica, Perícias e as Pesquisas de Mercado Nos Processos Judiciais Sobre Trade Dress",
+"Advocacia no Direito das Marcas",
+"Um Guia no Contencioso de Marcas",
+"Concorrência Desleal"]],
+["Proteção de Dados",[
+"Atuação Fiscalizatória e Processo Sancionador da ANPD",
+"Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 1)",
+"Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 2)",
+"Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 3)"]],
+["Recuperação Extrajudicial e Pré-Insolvência",[
+"Negociação Antecedente e Recuperação Extrajudicial",
+"Questões Práticas do Sistema de Pré-Insolvência",
+"Recuperação Extrajudicial"]],
+["Recuperação Judicial",[
+"Elaboração do Plano de Recuperação Judicial",
+"Habilitação, Divergência e Impugnação à Relação de Credores",
+"Recuperação Judicial do Produtor Rural",
+"Como Fazer uma Petição Inicial do Pedido de RJ",
+"DIP Financing",
+"Análise de Caso: Lojas Americanas",
+"Plano de Recuperação Judicial Alternativo, Apresentado Pelos Credores",
+"Cautelares Antecedentes na Recuperação Judicial",
+"Análise de Caso: 123 Milhas",
+"Novação Recuperacional",
+"Créditos Fiscais na Recuperação Judicial após a Lei nº 14.112/2020",
+"Aspectos Práticos da Administração Judicial",
+"Reorganizações Societárias Como Meios de Recuperação Judicial",
+"Abuso de Voto na Recuperação Judicial",
+"Prática, Precedentes e Casos na Perspectiva do Credor em processos de insolvência",
+"Plano Alternativo de Credores: Aspectos Polêmicos"]],
+["Recursos Cíveis",[
+"Agravo de Instrumento (Parte 1)",
+"Agravo de Instrumento (Parte 2)",
+"Agravo de Instrumento (Parte 3)",
+"Recurso Especial (Parte 1)",
+"Recurso Especial (Parte 2)",
+"Sustentação Oral",
+"Memoriais e Despacho com Ministros"]],
+["Reforma Tributária",[
+"Contratos e Reforma Tributária: Pontos de Atenção",
+"Reforma Tributária (Parte 1)",
+"Reforma Tributária (Parte 2)",
+"Holding na Reforma Tributária (Parte 1)",
+"Holding na Reforma Tributária (Parte 2)",
+"Holding na Reforma Tributária (Parte 3)",
+"Holding na Reforma Tributária (Parte 4)",
+"Holding na Reforma Tributária (Parte 5)",
+"Reforma Tributária Sobre o Consumo",
+"Reforma Tributária Sobre a Renda",
+"Reforma Tributária Sobre o Patrimônio",
+"Reforma Tributária para Advocacia Empresarial - Serviços e Oportunidades"]],
+["Registro Empresarial",[
+"Resolução de Conflitos Societários nas Juntas Comerciais: Aspectos Práticos",
+"Registro de Empresas",
+"IN DREI nº 88/2022",
+"Publicidade Obrigatória das S/A na Prática",
+"Arquivamento de Atos Empresariais e Processo Revisional Nas Juntas Comerciais (IN DREI N. 81/2020 e Alterações)",
+"Como Preencher Os Livros Societários",
+"Inova Simples",
+"Tratamento Jurídico Dado à Fraude de Terceiros Levadas a Registro nas Juntas Comerciais",
+"Registro Empresarial como Ferramenta de Blindagem Societária",
+"IN nº 01/24, do DREI",
+"Processo de Legalização de Empresas: Uma Visão Contábil",
+"Aspectos Jurídicos e Práticos da Atuação do MEI",
+"Resolução de Conflitos Nas Juntas Comerciais e No DREI",
+"Aspectos Registrais da Dissolução Parcial de Sociedade"]],
+["Transação Tributária",[
+"Por que transacionar? Fundamentos e evolução da cobrança tributária",
+"A transação de crédito tributário federal",
+"Transação Tributária"]]
+]
+const PROFESSORES = [["Fábio Ulhoa Coelho","Pablo Arruda","Bruna Puga","Thiago Guterres e Anna Moroni","João Rachid Motta","Bráulio Bicalho","Bianca Bez","Pablo Arruda","Pedro Ramunno"],["Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini"],["Pablo Arruda","Pablo Arruda","Estela Nunes","André Santa Cruz","André Santa Cruz","Estela Nunes","Manassés Lopes","Manassés Lopes","Manassés Lopes"],["Henrique Arake"],["Material em PDF","Material em PDF","Material em PDF","Material em PDF"],["Material em PDF","Material em PDF","Material em PDF","Material em PDF"],["Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF"],["Material em PDF","Material em PDF","Material em PDF","Material em PDF"],["Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF"],["Fábio Soares","Amanda Ramalho","Amanda Ramalho","Amanda Ramalho","Amanda Ramalho","Andressa Guerra"],["Pablo Arruda","Marcela Marconi","Leonardo Honorato","Mariana Martins Costa","Leonardo Honorato","Leonardo Honorato"],["Marcelo Guedes Nunes","Jaylton Lopes","Marcelo Luar","Maurício Menezes","Bruno Burini","Marcelo Dickstein","Manassés Lopes","Manassés Lopes","Lucas Lourenço","Manassés Lopes","Manassés Lopes","Manassés Lopes","Haroldo Lourenço","Erick Navarro","Marcelo Lauar","Marcelo Lauar","Marcelo Lauar"],["Allan Turano","Allan Turano","Allan Turano","Ronan Santos","Allan Turano","Chiara de Teffé"],["Pablo Arruda","Alexandre Gialluca","Roberta Franco","Pablo Arruda","Roberta Franco","André Roberto","Tatiana Dratovsky-Sister"],["Priscilla Menezes","Caio Sanas","Caio Sanas","Caio Sanas","Simone Gantois"],["Jarder Lemos Neto","Márcia Sepulveda","Maurício Buzanar","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","André Cont","Manassés","Marlon Tomazette"],["Marco Kaluf","Marco Kaluf","Marco Kaluf","Marco Kaluf"],["Castro","Allan Turano","Eduardo Molan Gaban","Filipe Denki","Filipe Denki","Filipe Denki","Jonas Marmelo"],["Renato Buranello","Renato","Washington Pimenta","Washington Pimentel"],["Amanda Athayde","Felipe Alciprete","Felipe Alciprete","Felipe Alciprete","Felipe Alciprete"],["Constanza Bodini","Alessandro Fazel","Caio Cézar","Danuza Küster","Nayra Mendes","Matheus Sampaio","Felipe Simões"],["Felipe Kertesz Renault","Felipe Kertesz Renault","Felipe Kertesz Renault","Felipe Kertesz Renault","Pablo Arruda","Pablo Arruda"],["Pablo Arruda","Pablo Arruda","Wagner Armani","Miguel Monteiro","Pablo Arruda","Mariana Pinto","Renato Vilela","Marcus Elidius","Santa Cruz"],["Pablo Arruda","Pablo Arruda","João Pedro Nascimento","Ivo Gico","Paulo Palhares","Pablo Arruda","Henrique Arake","Emerson Andena","Henrique Arake","Henrique Arake","Henrique Arake"],["Marcelo Andrade Feres","André Santa Cruz","Filipe Aguiar"],["Pablo Arruda","Pablo Arruda","Rodrigo Tellechea","Pablo Arruda","Pablo Arruda"],["André Roberto","Allan Turano","Tiago Vinhas"],["Mariana Maduro","Gustavo Coelho","Uinie Caminha André Santa Cruz e Saulo","Michles"],["Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Caio Melo","Caio Melo","Ronan Santos","Ronan Santos","Ronan Santos"],["Marlon Tomazette","Marcelo Von Adamek","Bruno Rezende","Pablo Arruda","Gustavo Gonzales","Henrique Arake","Allan Turano","Allan Turano","Diego Amorin","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda"],["Marcos Andrey de Souza","Pablo Arruda","Henrique Arake"],["","","",""],["Rodrigo Zirpoli","Isac Costa","Pablo Arruda","Allan Turano","Allan Turano","Ronan Santos","Pablo Arruda"],["Ronan Santos","Ronan Santos","Felipe Ferreira","Ronan Santos","Ronan Santos","Ronan Santos","Natan Gabriel","Natan Gabriel","Bruna Puga","Sérgio Merola","Sérgio Merola","Sérgio Merola"],["Uinie Caminha","Allan Turano","Uinie Caminha","Pedro Castelar","Pedro Castelar","Rodrigo Dufloth","Rodrigo Dufloth","Rodrigo Dufloth","Rodrigo Dufloth","Rodrigo Dufloth"],["","","","","","","","","","",""],["Rogério Figueiras","Neide Bueno","Kone Cesário","Alexandre Gialluca","Daniel Delatorre","Igor Manzan"],["Allan Turano","André Roberto","André Roberto","André Roberto"],["Pedro F. Teixeira","Daniel Carnio Costa","Marcos Andrey"],["Juliana Bumachar","Pablo Arruda","Marcelo Sacramone Maria Fabiana","Dominguez","Thomaz Sant'Ana","Pablo Arruda Paulo Furtado e Gustavo","Lacerda","Maria Fabiana Sant'Ana","Pablo Arruda","Marlon Tomazette","André Santa Cruz","João Pedro Scalzilli","Arnaldo Ferreira","Marcos Andrey","Vitor Lages","Victor Lages"],["Daniel Colnago","Daniel Colnago","Daniel Colnago","Mozart Borba","Mozart Borba","Saul Tourinho","Saul Tourinho"],["André Roberto","Gabriel Quintanilha","Gabriel Quintanilha","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Eduardo Weyll","Eduardo Weyll","Eduardo Weyll","Eduardo Weyll"],["Amanda Mesquita","José Cerezoli Allan Turano e André","Santa Cruz","Bruno Camargo","Amanda Mesquita","Allan Turano","Allan Turano","Danilo Mergulhão","Amanda Mesquita","Amanda Mesquita","Lucas Cruz","Fernando Gaggini","Leonardo Honorato","André Santa Cruz"],["Ariel Möller","Luciana Belo Soares","Filipe Aguiar"]];
+;
+
+/* ---------- utilidades ---------- */
+const foldChar = c => { const d = c.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(); return d.length === 1 ? d : c; };
+const fold = s => [...s].map(foldChar).join('');
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const hl = (text, q) => {
+  if (!q) return esc(text);
+  const chars = [...text], f = fold(text);
+  let out = '', i = 0, pos;
+  while ((pos = f.indexOf(q, i)) !== -1) {
+    out += esc(chars.slice(i, pos).join('')) + '<mark>' + esc(chars.slice(pos, pos + q.length).join('')) + '</mark>';
+    i = pos + q.length;
+  }
+  return out + esc(chars.slice(i).join(''));
+};
+const plural = (n, u) => n + ' ' + (n === 1 ? u[0] : u[1]);
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+const MODULES = DATA.map(([title, lessons], i) => {
+  const coll = title.startsWith('Coleção | ') && i !== 3;
+  return {
+    id: i + 1,
+    num: String(i + 1).padStart(2, '0'),
+    title, coll,
+    short: title.startsWith('Coleção |') ? title.slice(10) : title,
+    lessons,
+    professors: PROFESSORES[i] || [],
+    unit: coll ? ['material','materiais'] : ['aula','aulas'],
+    fTitle: fold(title),
+    fLessons: lessons.map((t,j) => fold(t + " " + (PROFESSORES[i]?.[j] || "")))
+  };
+});
+
+/* ---------- elementos e estado ---------- */
+const grid = document.getElementById('grid');
+const input = document.getElementById('q');
+const clearBtn = document.getElementById('clear');
+const summary = document.getElementById('summary');
+const empty = document.getElementById('empty');
+const emptyMsg = document.getElementById('emptyMsg');
+
+let q = '';
+let openIds = new Set();
+let listMode = false;
+let results = [];
+const progressKey = 'efae-guia-progresso-v1';
+let completed = new Set();
+try { completed = new Set(JSON.parse(localStorage.getItem(progressKey) || '[]')); } catch (_) {}
+function lessonKey(m, i) { return `${m.id}:${i}`; }
+function progressCount(m) { return m.lessons.filter((_, i) => completed.has(lessonKey(m, i))).length; }
+function updateOverallProgress() {
+  const lessons = MODULES.filter(m => !m.coll);
+  const total = lessons.reduce((sum,m) => sum + m.lessons.length, 0);
+  const done = lessons.reduce((sum,m) => sum + progressCount(m), 0);
+  const percent = total ? Math.round(done * 100 / total) : 0;
+  document.getElementById('overallPercent').textContent = percent + '%';
+  document.getElementById('overallDone').textContent = done;
+  document.getElementById('overallRemaining').textContent = total - done;
+  document.getElementById('overallTotal').textContent = total;
+  document.getElementById('overallFill').style.width = percent + '%';
+  document.getElementById('overallTrack').setAttribute('aria-valuenow', percent);
+}
+function moduleAction(m) {
+  const allDone = m.lessons.every((_, i) => completed.has(lessonKey(m, i)));
+  return `<button class="module-complete" type="button" data-module="${m.id}" aria-label="${allDone ? 'Desmarcar' : 'Marcar'} todas as aulas do módulo ${m.num}">${allDone ? '✓ Módulo concluído · Desmarcar' : '✓ Marcar módulo como concluído'}</button>`;
+}
+function lessonRow(m, t, i, professor, dim) {
+  const key = lessonKey(m, i), checked = completed.has(key);
+  return `<li class="row${dim ? ' dim' : ''}${checked ? ' done' : ''}"><span class="rn">${i + 1}</span><span class="rt"><label class="lesson-check"><input type="checkbox" class="lesson-done" data-key="${key}" ${checked ? 'checked' : ''} aria-label="Marcar aula ${i + 1} do módulo ${m.num} como concluída"><span class="lesson-content"><span class="lesson-title">${hl(t, q)}</span>${professor ? `<small class="teacher">${hl(professor, q)}</small>` : ''}</span></label></span></li>`;
+}
+
+const totals = MODULES.reduce((a, m) => { a[m.coll ? 'mat' : 'aulas'] += m.lessons.length; return a; }, {aulas:0, mat:0});
+
+function compute() {
+  const numMatch = q.match(/^(?:modulo\s*)?(\d{1,2})$/);
+  const num = numMatch ? +numMatch[1] : null;
+  results = MODULES.map(m => {
+    if (!q) return { m, hits: [], tm: false, show: true };
+    const tm = m.fTitle.includes(q) || num === m.id;
+    const hits = [];
+    m.fLessons.forEach((f, i) => { if (f.includes(q)) hits.push(i); });
+    return { m, hits, tm, show: tm || hits.length > 0 };
+  }).filter(r => r.show);
+}
+
+function cardHTML(r) {
+  const m = r.m, n = m.lessons.length;
+  const foot = (q && r.hits.length)
+    ? `<strong>${plural(r.hits.length, ['resultado','resultados'])}</strong> em ${plural(n, m.unit)}`
+    : plural(n, m.unit);
+  return `<button class="card${m.coll ? ' coll' : ''}" type="button" data-id="${m.id}" aria-expanded="${openIds.has(m.id)}" aria-controls="painel-${m.id}">
+    <span class="card-head"><span>Módulo ${m.num}</span>
+      <svg class="plus" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 1v12M1 7h12"/></svg></span>
+    <span class="card-body">
+      ${m.coll ? '<span class="card-tag">Coleção</span>' : ''}
+      <span class="card-title">${hl(m.short, q)}</span>
+      <span class="card-foot">${foot}<span class="progress-count" data-progress="${m.id}">${progressCount(m)}/${n} concluídos</span></span>
+    </span>
+  </button>`;
+}
+
+function render() {
+  updateOverallProgress();
+  openIds = new Set([...openIds].filter(id => results.some(r => r.m.id === id)));
+  if (q && results.length === 1) openIds.add(results[0].m.id);
+
+  grid.classList.toggle('list-mode', listMode);
+  grid.innerHTML = results.map(cardHTML).join('');
+  empty.hidden = results.length > 0;
+  grid.hidden = results.length === 0;
+
+  const raw = input.value.trim();
+  if (!q) {
+    summary.innerHTML = `<strong>${MODULES.length} módulos</strong>, ${totals.aulas} aulas e ${totals.mat} materiais`;
+  } else if (results.length) {
+    summary.innerHTML = `<strong>${plural(results.length, ['módulo','módulos'])}</strong> com “${esc(raw)}”`;
+  } else {
+    summary.textContent = 'Nenhum resultado';
+    emptyMsg.innerHTML = `Nada encontrado para “${esc(raw)}”. Confira a grafia ou tente um termo mais curto, como “Pablo Arruda” ou “holding”.`;
+  }
+  clearBtn.classList.toggle('show', input.value.length > 0);
+  placePanel(false);
+}
+
+function placePanel(animate) {
+  grid.querySelectorAll('.panel').forEach(p => p.remove());
+  const cards = [...grid.querySelectorAll('.card')];
+  cards.forEach(c => c.setAttribute('aria-expanded', String(openIds.has(+c.dataset.id))));
+  if (!openIds.size) return null;
+  if (listMode) {
+    for (const card of cards) {
+      if (!openIds.has(+card.dataset.id)) continue;
+      const r = results.find(x => x.m.id === +card.dataset.id);
+      const panel = document.createElement('div');
+      panel.className = 'panel';
+      const m = r.m;
+      const rows = m.lessons.map((t, i) => {
+        const professor = m.professors[i] || '';
+        const dim = q && r.hits.length && !r.hits.includes(i);
+        return lessonRow(m, t, i, professor, dim);
+      }).join('');
+      panel.innerHTML = `<section id="painel-${m.id}" aria-label="Módulo ${m.num}: ${esc(m.title)}"><div class="panel-head"><span class="ph-mod">Módulo ${m.num}</span><span class="ph-div" aria-hidden="true"></span><span class="ph-title">${esc(m.title)}</span>${moduleAction(m)}<button class="panel-close" data-id="${m.id}" type="button">Fechar ×</button></div><ol class="rows">${rows}</ol></section>`;
+      card.after(panel);
+    }
+    return grid.querySelector('.panel');
+  }
+  const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+  let firstPanel = null;
+  // Agrupa os módulos abertos por linha, preservando o alinhamento dos cartões.
+  for (let start = 0; start < cards.length; start += cols) {
+    const group = cards.slice(start, start + cols).filter(c => openIds.has(+c.dataset.id));
+    if (!group.length) continue;
+    const panel = document.createElement('div');
+    panel.className = 'panel' + (animate ? ' enter' : '');
+    panel.style.setProperty('--nx', (group[0].offsetLeft + group[0].offsetWidth / 2) + 'px');
+    for (const card of group) {
+      const r = results.find(x => x.m.id === +card.dataset.id);
+      const m = r.m;
+      const dimOthers = q && r.hits.length > 0;
+      const rows = m.lessons.map((t, i) => {
+        const professor = m.professors[i] || '';
+        const dim = dimOthers && !r.hits.includes(i);
+        return lessonRow(m, t, i, professor, dim);
+      }).join('');
+      const section = document.createElement('section');
+      section.id = `painel-${m.id}`;
+      section.setAttribute('aria-label', `Módulo ${m.num}: ${m.title}`);
+      section.innerHTML = `<div class="panel-head"><span class="ph-mod">Módulo ${m.num}</span><span class="ph-div" aria-hidden="true"></span><span class="ph-title">${esc(m.title)}</span>${moduleAction(m)}<button class="panel-close" data-id="${m.id}" type="button">Fechar ×</button></div><ol class="rows">${rows}</ol>`;
+      panel.appendChild(section);
+    }
+    cards[Math.min(start + cols - 1, cards.length - 1)].after(panel);
+    if (!firstPanel) firstPanel = panel;
+  }
+  return firstPanel;
+}
+
+function toggle(id) {
+  if (listMode) { listMode = false; grid.classList.remove('list-mode'); }
+  if (openIds.has(id)) openIds.delete(id); else openIds.add(id);
+  placePanel(true);
+}
+
+function closePanel(id) {
+  openIds.delete(id);
+  placePanel(false);
+  const card = grid.querySelector(`.card[data-id="${id}"]`);
+  if (card) card.focus();
+}
+
+/* ---------- controles de expansão ---------- */
+document.getElementById('expandAll').addEventListener('click', () => {
+  listMode = true;
+  grid.classList.add('list-mode');
+  openIds = new Set(results.map(r => r.m.id));
+  placePanel(false);
+});
+document.getElementById('collapseAll').addEventListener('click', () => {
+  listMode = false;
+  grid.classList.remove('list-mode');
+  openIds.clear();
+  placePanel(false);
+});
+
+/* ---------- eventos ---------- */
+grid.addEventListener('click', e => {
+  const btn = e.target.closest('.module-complete');
+  if (!btn) return;
+  const m = MODULES.find(x => x.id === Number(btn.dataset.module));
+  if (!m) return;
+  const allDone = m.lessons.every((_, i) => completed.has(lessonKey(m, i)));
+  m.lessons.forEach((_, i) => {
+    const key = lessonKey(m, i);
+    if (allDone) completed.delete(key); else completed.add(key);
+  });
+  try { localStorage.setItem(progressKey, JSON.stringify([...completed])); } catch (_) {}
+  grid.querySelectorAll(`[data-progress="${m.id}"]`).forEach(el => {
+    el.textContent = `${progressCount(m)}/${m.lessons.length} concluídos`;
+  });
+  updateOverallProgress();
+  placePanel(false);
+});
+grid.addEventListener('change', e => {
+  if (!e.target.matches('.lesson-done')) return;
+  const key = e.target.dataset.key;
+  if (e.target.checked) completed.add(key); else completed.delete(key);
+  try { localStorage.setItem(progressKey, JSON.stringify([...completed])); } catch (_) {}
+  e.target.closest('.row').classList.toggle('done', e.target.checked);
+  const moduleId = +key.split(':')[0];
+  const m = MODULES.find(x => x.id === moduleId);
+  grid.querySelectorAll(`[data-progress="${moduleId}"]`).forEach(el => {
+    el.textContent = `${progressCount(m)}/${m.lessons.length} concluídos`;
+  });
+  updateOverallProgress();
+  const headerButton = grid.querySelector(`.module-complete[data-module="${moduleId}"]`);
+  if (headerButton) {
+    const allDone = m.lessons.every((_, i) => completed.has(lessonKey(m, i)));
+    headerButton.textContent = allDone ? '✓ Módulo concluído · Desmarcar' : '✓ Marcar módulo como concluído';
+    headerButton.setAttribute('aria-label', `${allDone ? 'Desmarcar' : 'Marcar'} todas as aulas do módulo ${m.num}`);
+  }
+});
+grid.addEventListener('click', e => {
+  if (e.target.closest('.panel-close')) { closePanel(+e.target.closest('.panel-close').dataset.id); return; }
+  const card = e.target.closest('.card');
+  if (card) toggle(+card.dataset.id);
+});
+
+input.addEventListener('input', () => {
+  q = fold(input.value).replace(/\s+/g, ' ').trim();
+  compute();
+  render();
+});
+
+function clearSearch() {
+  input.value = '';
+  q = '';
+  compute();
+  render();
+  input.focus();
+}
+clearBtn.addEventListener('click', clearSearch);
+document.getElementById('reset').addEventListener('click', clearSearch);
+
+document.addEventListener('keydown', e => {
+  const typing = /^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName);
+  if (e.key === '/' && !typing) { e.preventDefault(); input.focus(); return; }
+  if (e.key === 'Escape') {
+    if (document.activeElement === input && input.value) { clearSearch(); return; }
+    if (openIds.size) { openIds.clear(); listMode = false; grid.classList.remove('list-mode'); placePanel(false); }
+  }
+});
+
+let rt;
+window.addEventListener('resize', () => {
+  clearTimeout(rt);
+  rt = setTimeout(() => { if (openIds.size) placePanel(false); }, 120);
+});
+
+compute();
+render();
+</script>
+</body>
+</html>
