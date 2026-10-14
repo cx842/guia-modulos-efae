@@ -383,376 +383,969 @@
 
 <script>
 const DATA = [
-["Advocacia Empresarial e Desenvolvimento Profissional",[
-"Aula magna | Advocacia empresarial: passado, presente e futuro",
-"Como iniciar (e evoluir) na carreira da advocacia empresarial",
-"Advocacia para Startups",
-"Como assessorar empresas que vendem para a Administração Pública",
-"O impacto da regulamentação dos jogos no ordenamento jurídico brasileiro",
-"Direito Penal como instrumento para encerrar conflitos societários",
-"Técnicas de negociação eficiente",
-"Persuasão na reunião",
-"Hotseat | Academia e Advocacia"]],
-["Advocacia no STJ",[
-"A advocacia no STJ (Parte 1)",
-"A advocacia no STJ (Parte 2)",
-"A advocacia no STJ (Parte 3)",
-"A advocacia no STJ (Parte 4)",
-"Recursos | Instância extraordinária: Introdução; Recurso Especial",
-"Recursos | Instância extraordinária: Recurso Especial (Parte 1)",
-"Recursos | Instância extraordinária: Recurso Especial (Parte 2)",
-"Recursos | Instância extraordinária: Recurso Especial (Parte 3)",
-"Recursos | Instância extraordinária: Recurso Especial (Parte 4)",
-"Recursos | Instância extraordinária: Agravo em Recurso Especial; Recursos “operacionais”; Agravo Interno",
-"Recursos “Operacionais”: Embargos de declaração (Parte 1)",
-"Recursos “Operacionais”: Embargos de declaração (Parte 2)",
-"Recursos “Operacionais”: Embargos de divergência; Recursos | Duplo Grau: Recurso Ordinário",
-"Recursos | Duplo grau: Recurso Ordinário; Incidentes",
-"Incidentes | Ações originárias"]],
-["Cobrança e Execução Empresarial",[
-"Ações cambiais: execução, monitória, defesas",
-"Penhora de Quotas",
-"Defesa em Ações Cambiais",
-"Penhora de Stock Options",
-"Penhora de Criptoativos",
-"Capital social declarado x capital social integralizado: efeitos práticos na execução",
-"Embargos de terceiro",
-"Penhora do faturamento de empresa",
-"Cobrança de dívidas: ação monitória e execução de títulos executivos extrajudiciais"]],
-["Coleção | Conteúdos Extras",[
-"Simulado EFAE"]],
-["Coleção | Modelos de Contencioso Empresarial",[
-"Ação de Dissolução Parcial por Exclusão",
-"Ação de Reconhecimento de Sociedade c.c Dissolução",
-"Inicial | Ação de Prestação de Contas - SCP",
-"Inicial modelo"]],
-["Coleção | Modelos de Investimento e Financiamento",[
-"Contrato de Vesting",
-"Modelo de Escritura de Emissão Debentures",
-"PMZ mútuo conversível template",
-"escritura-sul-america-s-a"]],
-["Coleção | Modelos de Recuperação e Insolvência",[
-"Habilitação Tempestiva de Crédito",
-"INICIAL - unimed",
-"Apelação Figueirense",
-"Figueirense | Plano de RE (v.final)",
-"Figueirense - Pet Homologacao do PRE (v. autuada)"]],
-["Coleção | Modelos para Escritórios de Advocacia",[
-"Contratos de Parceria e Indicação em Prestação de Serviços Jurídicos",
-"Contrato de Honorários para Contencioso",
-"Memorandum of Understanding (MoU) - PARCERIA",
-"Plano de carreira de advogados - Modelo exemplificativo"]],
-["Coleção | Modelos Societários",[
-"Acordo de Acionistas",
-"Acordo de Quotistas PJ Médicos",
-"ACORDO+HOLDING+PATRIMONIAL",
-"Alteração Contratual Post Mortem de Sócio",
-"Cláusulas Societárias",
-"Modelo de Contrato Social - PJ Médicos",
-"Modelo transformação LTDA em S.A",
-"Retirada de sócio após notificação",
-"Acordo de Quotista",
-"Contrato Social com sócios de serviço"]],
-["Compliance",[
-"Compliance e Direito do Consumidor: a importância da integridade nas relações consumeristas",
-"Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 1)",
-"Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 2)",
-"Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 3)",
-"Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 4)",
-"Redação de Código de Conduta e Ética e Gestão de Canal de Escuta"]],
-["Conflitos Societários",[
-"A Responsabilidade do Ex-sócio",
-"Exclusão Extrajudicial de Sócios",
-"Exclusão de Sócio: Estratégias e Liminares",
-"Cláusula de Shotgun",
-"Liminares e Ações não Contenciosas Estratégicas",
-"Exclusão de Sócio"]],
-["Contencioso Empresarial",[
-"Ação de Responsabilidade por Abuso do Controlador",
-"Negócios Jurídicos Processuais",
-"Intervenção judicial em Conflitos Societários",
-"Ação de Responsabilidade do art. 246, da Lei 6.404/76",
-"Solução de Disputas no Contencioso Estratégico Empresarial",
-"Arbitragem: Principais Temas",
-"Ação de Reconhecimento de Sociedade de Fato",
-"Ação de Exigir Contas",
-"Aspectos Práticos da Advocacia em Leilões de Imóveis",
-"Negócio Jurídico Processual Aplicado aos Contratos Empresariais: Limites e Possibilidades",
-"Ação Indenizatória por Violação de Segredo de Negócio",
-"Ação Renovatória de Locação: Requisitos e Prazos Fatais para Garantir a Permanência da Empresa no Ponto Comercial",
-"Impactos Processuais na Lei 14.195/21",
-"Técnicas de Litigância",
-"Intervenção Judicial em Conflitos Societários (Parte 1)",
-"Intervenção Judicial em Conflitos Societários (Parte 2)",
-"Intervenção Judicial em Conflitos Societários (Parte 3)"]],
-["Contratos da Economia Digital e Criativa",[
-"Influenciadores Digitais: Aspectos Jurídicos",
-"Contratos com Streamers e Plataformas de Streaming",
-"Contrato de Media for Equity",
-"Contratos de Coprodução de Curso Online",
-"Contrato de Naming Rights",
-"Requerimento de Remoção de Conteúdo Ilícito em Redes Sociais à Luz do Tema 987, do STF"]],
-["Contratos Empresariais em Espécie",[
-"Cessão de Quotas x Trespasse: Diferenças, Requisitos e Efeitos",
-"Implementação do Sistema de Franquias",
-"Seguros Empresariais",
-"Sociedade em Conta de Participação (SCP)",
-"Seguro de Responsabilidade Civil para Empresas e Profissionais de Saúde",
-"Contrato de Built to Suit",
-"Contratos de Colaboração"]],
-["Criptoativos, Blockchain e Tokenização",[
-"Contratos com Prestadores de Serviços de Ativos Virtuais",
-"Marco Legal dos Criptoativos",
-"Advocacia no Mercado de Criptoativos",
-"Aplicação da Blockchain na Advocacia Empresarial",
-"Tokenização de valor mobiliário via Resolução CVM 88"]],
-["Desconsideração da Personalidade Jurídica",[
-"A Desconsideração da Personalidade Jurídica nos Processos de Insolvência",
-"A Defesa do Sócio/Administrador de Sociedade Empresária na Execução Fiscal",
-"Desconsideração da Personalidade Jurídica",
-"O Fim da Teoria Menor da Desconsideração (Parte 1)",
-"O Fim da Teoria Menor da Desconsideração (Parte 2)",
-"O Fim da Teoria Menor da Desconsideração (Parte 3)",
-"Defesa da PJ em Incidentes de Desconsideração",
-"Ações de Desconsideração da PJ",
-"Incidente de Desconsideração da Personalidade Jurídica",
-"Alterações na Desconsideração da Personalidade Jurídica"]],
-["Direito Cooperativo e Cooperativismo",[
-"Direito Cooperativo e Cooperativismo (Parte 1)",
-"Direito Cooperativo e Cooperativismo (Parte 2)",
-"Direito Cooperativo e Cooperativismo (Parte 3)",
-"Direito Cooperativo e Cooperativismo (Parte 4)"]],
-["Direito Desportivo Empresarial",[
-"Aspectos Práticos da SAF I (Lei 14.193/2021)",
-"Aspectos Societários dos Clubes-Empresa e das SAFs",
-"Questões práticas sobre M&As de SAFs",
-"SAF e Recuperação Judicial de Clubes de Futebol (Parte 1)",
-"SAF e Recuperação Judicial de Clubes de Futebol (Parte 2)",
-"SAF e Recuperação Judicial de Clubes de Futebol (Parte 3)",
-"Fair Play Financeiro"]],
-["Direito do Agronegócio",[
-"Contratos do Agronegócio",
-"Crédito Rural e Sistema Privado de Financiamento do Agronegócio",
-"Advocacia Empresarial no Agronegócio (Parte 1)",
-"Advocacia Empresarial no Agronegócio (Parte 2)"]],
-["Direito do Trabalho Empresarial",[
-"O Que a Regra que Bane Cláusula de Não Concorrência com Trabalhadores nos EUA Pode Sinalizar Para as Empresas no Brasil",
-"Princípios | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 1)",
-"Relação de Emprego x Pejotização | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 2)",
-"Casos Frequentes em Empresas | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 3)",
-"Riscos Psicossociais: O Novo Capítulo da NR-1 que o Empresário (e o Advogado Dele) Precisa Entender | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 4)"]],
-["Direito no Mercado Financeiro",[
-"Novo Marco Legal das Garantias",
-"Estrutura jurídica dos produtos bancários e do crédito no Mercado Financeiro",
-"Bancos Públicos, Financiamento ao Desenvolvimento e Política de Crédito",
-"Câmbio, Stablecoins e Inovação Regulatória no Mercado Financeiro",
-"Proteção de Dados no Mercado Financeiro",
-"Contencioso estratégico no Mercado Financeiro",
-"Propriedade Intelectual no Mercado Financeiro"]],
-["Direito Tributário Empresarial",[
-"Aspectos da Carga Tributária no Mundo e no Brasil (Parte 1)",
-"Aspectos da Carga Tributária no Mundo e no Brasil (Parte 2)",
-"Aspectos da Carga Tributária no Mundo e no Brasil (Parte 3)",
-"Aspectos da Carga Tributária no Mundo e no Brasil (Parte 4)",
-"Aspectos Tributários da Integralização de Capital Social (Parte 1)",
-"Aspectos Tributários da Integralização de Capital Social (Parte 2)"]],
-["Dissolução e Apuração de Haveres",[
-"Dissolução Parcial de Sociedade",
-"Dissolução Total de Sociedade",
-"Apuração de Haveres em sociedade Simples",
-"Apuração de Haveres",
-"Apuração de Haveres em Decorrência de Dissolução Conjugal",
-"Questões Processuais na Apuração de Haveres",
-"Avaliação para Fins de Apuração de Haveres nas LTDAs",
-"Avaliação de Bens e Aplicação de Juros de Mora na Apuração de Haveres",
-"Apuração e Pagamento de Haveres"]],
-["Documentos Societários",[
-"Elaboração de Contrato Social Eficiente (Parte 1)",
-"Elaboração de Contrato Social Eficiente (Parte 2)",
-"O “Caminho das Pedras” nos Estatutos Sociais",
-"MoU (Memorando de Entendimentos)",
-"Cláusula de Non Compete em Contratos Societários",
-"Joint Ventures",
-"Cláusulas de Acordo de Acionistas",
-"Contrato Social: Análise de Critérios Jurídicos e Econômicos para a Elaboração de Cláusulas Específicas",
-"Contrato Social",
-"Estatuto Social",
-"Acordo de Sócios"]],
-["Falência",[
-"O Novo Processo de Falência: Impactos da Lei 14.112/20",
-"(Im)possibilidade do Pedido de Falência como Meio de Cobrança",
-"Pedido de Falência pelo Fisco"]],
-["Fundamentos do Direito Societário",[
-"Como Estruturar uma Relação Societária Capital-Trabalho",
-"Associações Empresariais e SPE",
-"Tipos Societários: Vantagens e Desvantagens Práticas",
-"Sociedade de Fato",
-"Entendendo a Verdadeira Limitação de Responsabilidade"]],
-["Fundamentos dos Contratos Empresariais",[
-"NDA (Non Disclosure Agreement)",
-"Acordo de Indenidade",
-"Revisão, Rescisão e Penalidades em Contratos Empresariais"]],
-["Fusões e Aquisições",[
-"Pontos Estratégicos no Processo de M&A",
-"Aprovação Concorrencial de Operações Societárias pelo CADE",
-"Cláusula de Não Concorrência em M&A's",
-"Estratégia de Elon Musk para Comprar o Twitter"]],
-["Gestão de Escritórios de Advocacia",[
-"Estruturação societária de Escritórios de Advocacia (Parte 1)",
-"Estruturação Societária de Escritórios de Advocacia (Parte 2)",
-"Negociação e Precificação de Honorários (Parte 1)",
-"Negociação e Precificação de Honorários (Parte 2)",
-"Negociação e Precificação de Honorários (Parte 3)",
-"Negociação e Precificação de Honorários (Parte 4)",
-"Contabilidade Básica para Advogados (Parte 1)",
-"Contabilidade Básica para Advogados (Parte 2)",
-"Pessoas | Gestão Eficiente na Advocacia",
-"Como Aumentar a Produtividade do Escritório | Gestão Eficiente na Advocacia",
-"Sistemas | Gestão Eficiente na Advocacia"]],
-["Governança Societária",[
-"Assembleia de Sócios (da Convocação à Realização)",
-"Invalidades Assembleares",
-"Funcionamento da Assembleia Geral de Credores",
-"A Lei 14.451 e a Modificação dos Quóruns da LTDA",
-"Voto Conflitante",
-"Distribuição de Lucros na Sociedade LTDA",
-"Atuação em Assembleia de Acionistas",
-"Distribuição de dividendos x Pro Labore: O que (não) Fazer e Como Fazer",
-"Apurar, Deliberar e Pagar: O Marco Temporal Decisivo da Lei 15.270/25 Sobre Dividendos",
-"O Novo Anonimato na S/A",
-"Administração de Sociedade Limitada (Parte 1)",
-"Administração de Sociedade Limitada (Parte 2)",
-"Administração de Sociedade Limitada (Parte 3)",
-"Administração de Sociedade Limitada (Parte 4)"]],
-["Holdings e Empresas Familiares",[
-"Acordos de Cotistas/Acionistas em Empresas Familiares",
-"Reestruturação Societária: O Sistema de Ampulheta",
-"Holding Familiar"]],
-["Inteligência Artificial na Advocacia",[
-"Aula de Boas-Vindas",
-"Módulo 1",
-"Módulo 2",
-"Módulo 3"]],
-["Investimento e Financiamento de Sociedades",[
-"Mútuo Conversível em Participação Societária",
-"Meios Alternativos de Captação de Recursos para Pequenas e Médias Empresas",
-"Vesting",
-"Equity Crowdfunding",
-"Contrato de SAFE no Brasil",
-"Principais Cláusulas do Contrato de Vesting",
-"Formas de Investimento na LTDA"]],
-["Marketing Jurídico",[
-"Regras da OAB e Posicionamento Digital",
-"Tráfego Pago para Advogados(as)",
-"Comunicação e Oratória Jurídica",
-"Conceitos Iniciais de Marketing Jurídico",
-"Como Utilizar as Redes Sociais",
-"Google ads: A Maior Engrenagem de Prospecção de Clientes na Internet",
-"Criando sua Conta do Google ads na Prática",
-"Criando sua Primeira Campanha de Google ads na Prática",
-"Produção de Conteúdo em Blog e Criação de Escritório Digital",
-"Como Atrair Clientes Através de Artigos (Parte 1)",
-"Como Atrair Clientes Através de Artigos (Parte 2)",
-"Como Atrair Clientes Através de Artigos (Parte 3)"]],
-["Mercado de Capitais e Fundos de Investimento",[
-"Emissão de Debêntures",
-"Debêntures ou Notas Comerciais? O que Adotar na Sociedade Limitada",
-"O Novo Marco da Securitização",
-"Advocacia no Mercado de Capitais (Parte 1)",
-"Advocacia no Mercado de Capitais (Parte 2)",
-"Como Constituir e Estruturar Fundos de Investimentos",
-"O Novo Marco Regulatório dos Fundos de Investimento",
-"Fundos de Investimento (Parte 1)",
-"Fundos de Investimento (Parte 2)",
-"Fundos de Investimento (Parte 3)"]],
-["Português Jurídico",[
-"Introdução",
-"Vocabulário Jurídico",
-"Emprego de Algumas Expressões e Pronomes de Tratamento",
-"Ortografia e Regência",
-"Conectivos",
-"Partícula SE e Concordância",
-"Pontuação",
-"Pontuação: Como Fazer Referência a Dispositivos Legais + Pronomes Demonstrativos",
-"Vícios de Linguagem que Comprometem Seu Texto",
-"Vícios Textuais: Estratégias Argumentativas",
-"Estratégias Argumentativas; Ferramentas de Pesquisa"]],
-["Propriedade Industrial",[
-"Registro de Marcas",
-"Busca e Registro de Marcas na Prática",
-"Prova Técnica, Perícias e as Pesquisas de Mercado Nos Processos Judiciais Sobre Trade Dress",
-"Advocacia no Direito das Marcas",
-"Um Guia no Contencioso de Marcas",
-"Concorrência Desleal"]],
-["Proteção de Dados",[
-"Atuação Fiscalizatória e Processo Sancionador da ANPD",
-"Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 1)",
-"Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 2)",
-"Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 3)"]],
-["Recuperação Extrajudicial e Pré-Insolvência",[
-"Negociação Antecedente e Recuperação Extrajudicial",
-"Questões Práticas do Sistema de Pré-Insolvência",
-"Recuperação Extrajudicial"]],
-["Recuperação Judicial",[
-"Elaboração do Plano de Recuperação Judicial",
-"Habilitação, Divergência e Impugnação à Relação de Credores",
-"Recuperação Judicial do Produtor Rural",
-"Como Fazer uma Petição Inicial do Pedido de RJ",
-"DIP Financing",
-"Análise de Caso: Lojas Americanas",
-"Plano de Recuperação Judicial Alternativo, Apresentado Pelos Credores",
-"Cautelares Antecedentes na Recuperação Judicial",
-"Análise de Caso: 123 Milhas",
-"Novação Recuperacional",
-"Créditos Fiscais na Recuperação Judicial após a Lei nº 14.112/2020",
-"Aspectos Práticos da Administração Judicial",
-"Reorganizações Societárias Como Meios de Recuperação Judicial",
-"Abuso de Voto na Recuperação Judicial",
-"Prática, Precedentes e Casos na Perspectiva do Credor em processos de insolvência",
-"Plano Alternativo de Credores: Aspectos Polêmicos"]],
-["Recursos Cíveis",[
-"Agravo de Instrumento (Parte 1)",
-"Agravo de Instrumento (Parte 2)",
-"Agravo de Instrumento (Parte 3)",
-"Recurso Especial (Parte 1)",
-"Recurso Especial (Parte 2)",
-"Sustentação Oral",
-"Memoriais e Despacho com Ministros"]],
-["Reforma Tributária",[
-"Contratos e Reforma Tributária: Pontos de Atenção",
-"Reforma Tributária (Parte 1)",
-"Reforma Tributária (Parte 2)",
-"Holding na Reforma Tributária (Parte 1)",
-"Holding na Reforma Tributária (Parte 2)",
-"Holding na Reforma Tributária (Parte 3)",
-"Holding na Reforma Tributária (Parte 4)",
-"Holding na Reforma Tributária (Parte 5)",
-"Reforma Tributária Sobre o Consumo",
-"Reforma Tributária Sobre a Renda",
-"Reforma Tributária Sobre o Patrimônio",
-"Reforma Tributária para Advocacia Empresarial - Serviços e Oportunidades"]],
-["Registro Empresarial",[
-"Resolução de Conflitos Societários nas Juntas Comerciais: Aspectos Práticos",
-"Registro de Empresas",
-"IN DREI nº 88/2022",
-"Publicidade Obrigatória das S/A na Prática",
-"Arquivamento de Atos Empresariais e Processo Revisional Nas Juntas Comerciais (IN DREI N. 81/2020 e Alterações)",
-"Como Preencher Os Livros Societários",
-"Inova Simples",
-"Tratamento Jurídico Dado à Fraude de Terceiros Levadas a Registro nas Juntas Comerciais",
-"Registro Empresarial como Ferramenta de Blindagem Societária",
-"IN nº 01/24, do DREI",
-"Processo de Legalização de Empresas: Uma Visão Contábil",
-"Aspectos Jurídicos e Práticos da Atuação do MEI",
-"Resolução de Conflitos Nas Juntas Comerciais e No DREI",
-"Aspectos Registrais da Dissolução Parcial de Sociedade"]],
-["Transação Tributária",[
-"Por que transacionar? Fundamentos e evolução da cobrança tributária",
-"A transação de crédito tributário federal",
-"Transação Tributária"]]
-]
-const PROFESSORES = [["Fábio Ulhoa Coelho","Pablo Arruda","Bruna Puga","Thiago Guterres e Anna Moroni","João Rachid Motta","Bráulio Bicalho","Bianca Bez","Pablo Arruda","Pedro Ramunno"],["Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini","Bruno Burini"],["Pablo Arruda","Pablo Arruda","Estela Nunes","André Santa Cruz","André Santa Cruz","Estela Nunes","Manassés Lopes","Manassés Lopes","Manassés Lopes"],["Henrique Arake"],["Material em PDF","Material em PDF","Material em PDF","Material em PDF"],["Material em PDF","Material em PDF","Material em PDF","Material em PDF"],["Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF"],["Material em PDF","Material em PDF","Material em PDF","Material em PDF"],["Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF","Material em PDF"],["Fábio Soares","Amanda Ramalho","Amanda Ramalho","Amanda Ramalho","Amanda Ramalho","Andressa Guerra"],["Pablo Arruda","Marcela Marconi","Leonardo Honorato","Mariana Martins Costa","Leonardo Honorato","Leonardo Honorato"],["Marcelo Guedes Nunes","Jaylton Lopes","Marcelo Luar","Maurício Menezes","Bruno Burini","Marcelo Dickstein","Manassés Lopes","Manassés Lopes","Lucas Lourenço","Manassés Lopes","Manassés Lopes","Manassés Lopes","Haroldo Lourenço","Erick Navarro","Marcelo Lauar","Marcelo Lauar","Marcelo Lauar"],["Allan Turano","Allan Turano","Allan Turano","Ronan Santos","Allan Turano","Chiara de Teffé"],["Pablo Arruda","Alexandre Gialluca","Roberta Franco","Pablo Arruda","Roberta Franco","André Roberto","Tatiana Dratovsky-Sister"],["Priscilla Menezes","Caio Sanas","Caio Sanas","Caio Sanas","Simone Gantois"],["Jarder Lemos Neto","Márcia Sepulveda","Maurício Buzanar","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","André Cont","Manassés","Marlon Tomazette"],["Marco Kaluf","Marco Kaluf","Marco Kaluf","Marco Kaluf"],["Castro","Allan Turano","Eduardo Molan Gaban","Filipe Denki","Filipe Denki","Filipe Denki","Jonas Marmelo"],["Renato Buranello","Renato","Washington Pimenta","Washington Pimentel"],["Amanda Athayde","Felipe Alciprete","Felipe Alciprete","Felipe Alciprete","Felipe Alciprete"],["Constanza Bodini","Alessandro Fazel","Caio Cézar","Danuza Küster","Nayra Mendes","Matheus Sampaio","Felipe Simões"],["Felipe Kertesz Renault","Felipe Kertesz Renault","Felipe Kertesz Renault","Felipe Kertesz Renault","Pablo Arruda","Pablo Arruda"],["Pablo Arruda","Pablo Arruda","Wagner Armani","Miguel Monteiro","Pablo Arruda","Mariana Pinto","Renato Vilela","Marcus Elidius","Santa Cruz"],["Pablo Arruda","Pablo Arruda","João Pedro Nascimento","Ivo Gico","Paulo Palhares","Pablo Arruda","Henrique Arake","Emerson Andena","Henrique Arake","Henrique Arake","Henrique Arake"],["Marcelo Andrade Feres","André Santa Cruz","Filipe Aguiar"],["Pablo Arruda","Pablo Arruda","Rodrigo Tellechea","Pablo Arruda","Pablo Arruda"],["André Roberto","Allan Turano","Tiago Vinhas"],["Mariana Maduro","Gustavo Coelho","Uinie Caminha André Santa Cruz e Saulo","Michles"],["Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Caio Melo","Caio Melo","Ronan Santos","Ronan Santos","Ronan Santos"],["Marlon Tomazette","Marcelo Von Adamek","Bruno Rezende","Pablo Arruda","Gustavo Gonzales","Henrique Arake","Allan Turano","Allan Turano","Diego Amorin","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda"],["Marcos Andrey de Souza","Pablo Arruda","Henrique Arake"],["","","",""],["Rodrigo Zirpoli","Isac Costa","Pablo Arruda","Allan Turano","Allan Turano","Ronan Santos","Pablo Arruda"],["Ronan Santos","Ronan Santos","Felipe Ferreira","Ronan Santos","Ronan Santos","Ronan Santos","Natan Gabriel","Natan Gabriel","Bruna Puga","Sérgio Merola","Sérgio Merola","Sérgio Merola"],["Uinie Caminha","Allan Turano","Uinie Caminha","Pedro Castelar","Pedro Castelar","Rodrigo Dufloth","Rodrigo Dufloth","Rodrigo Dufloth","Rodrigo Dufloth","Rodrigo Dufloth"],["","","","","","","","","","",""],["Rogério Figueiras","Neide Bueno","Kone Cesário","Alexandre Gialluca","Daniel Delatorre","Igor Manzan"],["Allan Turano","André Roberto","André Roberto","André Roberto"],["Pedro F. Teixeira","Daniel Carnio Costa","Marcos Andrey"],["Juliana Bumachar","Pablo Arruda","Marcelo Sacramone Maria Fabiana","Dominguez","Thomaz Sant'Ana","Pablo Arruda Paulo Furtado e Gustavo","Lacerda","Maria Fabiana Sant'Ana","Pablo Arruda","Marlon Tomazette","André Santa Cruz","João Pedro Scalzilli","Arnaldo Ferreira","Marcos Andrey","Vitor Lages","Victor Lages"],["Daniel Colnago","Daniel Colnago","Daniel Colnago","Mozart Borba","Mozart Borba","Saul Tourinho","Saul Tourinho"],["André Roberto","Gabriel Quintanilha","Gabriel Quintanilha","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Pablo Arruda","Eduardo Weyll","Eduardo Weyll","Eduardo Weyll","Eduardo Weyll"],["Amanda Mesquita","José Cerezoli Allan Turano e André","Santa Cruz","Bruno Camargo","Amanda Mesquita","Allan Turano","Allan Turano","Danilo Mergulhão","Amanda Mesquita","Amanda Mesquita","Lucas Cruz","Fernando Gaggini","Leonardo Honorato","André Santa Cruz"],["Ariel Möller","Luciana Belo Soares","Filipe Aguiar"]];
-;
+ [
+  "Advocacia Empresarial e Desenvolvimento Profissional",
+  [
+   "Aula magna | Advocacia empresarial: passado, presente e futuro",
+   "Como iniciar (e evoluir) na carreira da advocacia empresarial",
+   "Advocacia para Startups",
+   "Como assessorar empresas que vendem para a Administração Pública",
+   "Técnicas de negociação eficiente",
+   "Persuasão na reunião",
+   "Hotseat | Academia e Advocacia"
+  ]
+ ],
+ [
+  "Contencioso e Advocacia em Tribunais Superiores",
+  [
+   "A advocacia no STJ (Parte 1)",
+   "A advocacia no STJ (Parte 2)",
+   "A advocacia no STJ (Parte 3)",
+   "A advocacia no STJ (Parte 4)",
+   "Recursos | Instância extraordinária: Introdução; Recurso Especial",
+   "Recursos | Instância extraordinária: Recurso Especial (Parte 1)",
+   "Recursos | Instância extraordinária: Recurso Especial (Parte 2)",
+   "Recursos | Instância extraordinária: Recurso Especial (Parte 3)",
+   "Recursos | Instância extraordinária: Recurso Especial (Parte 4)",
+   "Recursos | Instância extraordinária: Agravo em Recurso Especial; Recursos “operacionais”; Agravo Interno",
+   "Recursos “Operacionais”: Embargos de declaração (Parte 1)",
+   "Recursos “Operacionais”: Embargos de declaração (Parte 2)",
+   "Recursos “Operacionais”: Embargos de divergência; Recursos | Duplo Grau: Recurso Ordinário",
+   "Recursos | Duplo grau: Recurso Ordinário; Incidentes",
+   "Incidentes | Ações originárias",
+   "Agravo de Instrumento (Parte 1)",
+   "Agravo de Instrumento (Parte 2)",
+   "Agravo de Instrumento (Parte 3)",
+   "Recurso Especial (Parte 1)",
+   "Recurso Especial (Parte 2)",
+   "Sustentação Oral",
+   "Memoriais e Despacho com Ministros"
+  ]
+ ],
+ [
+  "Cobrança e Execução Empresarial",
+  [
+   "Ações cambiais: execução, monitória, defesas",
+   "Penhora de Quotas",
+   "Defesa em Ações Cambiais",
+   "Penhora de Stock Options",
+   "Penhora de Criptoativos",
+   "Capital social declarado x capital social integralizado: efeitos práticos na execução",
+   "Embargos de terceiro",
+   "Penhora do faturamento de empresa",
+   "Cobrança de dívidas: ação monitória e execução de títulos executivos extrajudiciais"
+  ]
+ ],
+ [
+  "Coleção | Conteúdos Extras",
+  [
+   "Simulado EFAE"
+  ]
+ ],
+ [
+  "Coleção | Modelos de Contencioso Empresarial",
+  [
+   "Ação de Dissolução Parcial por Exclusão",
+   "Ação de Reconhecimento de Sociedade c.c Dissolução",
+   "Inicial | Ação de Prestação de Contas - SCP",
+   "Inicial modelo"
+  ]
+ ],
+ [
+  "Coleção | Modelos de Investimento e Financiamento",
+  [
+   "Contrato de Vesting",
+   "Modelo de Escritura de Emissão Debentures",
+   "PMZ mútuo conversível template",
+   "escritura-sul-america-s-a"
+  ]
+ ],
+ [
+  "Coleção | Modelos de Recuperação e Insolvência",
+  [
+   "Habilitação Tempestiva de Crédito",
+   "INICIAL - unimed",
+   "Habilitação Tempestiva de Crédito",
+   "Apelação Figueirense",
+   "Figueirense | Plano de RE (v.final)",
+   "Figueirense - Pet Homologacao do PRE (v. autuada)"
+  ]
+ ],
+ [
+  "Coleção | Modelos para Escritórios de Advocacia",
+  [
+   "Contratos de Parceria e Indicação em Prestação de Serviços Jurídicos",
+   "Contrato de Honorários para Contencioso",
+   "Memorandum of Understanding (MoU) - PARCERIA",
+   "Plano de carreira de advogados - Modelo exemplificativo"
+  ]
+ ],
+ [
+  "Coleção | Modelos Societários",
+  [
+   "Acordo de Acionistas",
+   "Acordo de Quotistas PJ Médicos",
+   "ACORDO+HOLDING+PATRIMONIAL",
+   "Alteração Contratual Post Mortem de Sócio",
+   "Cláusulas Societárias",
+   "Modelo de Contrato Social - PJ Médicos",
+   "Modelo transformação LTDA em S.A",
+   "Retirada de sócio após notificação",
+   "Acordo de Quotista",
+   "Contrato Social com sócios de serviço"
+  ]
+ ],
+ [
+  "Compliance",
+  [
+   "Compliance e Direito do Consumidor: a importância da integridade nas relações consumeristas",
+   "Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 1)",
+   "Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 2)",
+   "Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 3)",
+   "Advocacia Empresarial e Compliance: Como Implantar um Programa de Conformidade em Pequenas Empresas (Parte 4)",
+   "Redação de Código de Conduta e Ética e Gestão de Canal de Escuta"
+  ]
+ ],
+ [
+  "Conflitos Societários",
+  [
+   "Direito Penal como instrumento para encerrar conflitos societários",
+   "A Responsabilidade do Ex-sócio",
+   "Exclusão Extrajudicial de Sócios",
+   "Exclusão de Sócio: Estratégias e Liminares",
+   "Cláusula de Shotgun",
+   "Liminares e Ações não Contenciosas Estratégicas",
+   "Exclusão de Sócio",
+   "Ação de Responsabilidade por Abuso do Controlador",
+   "Intervenção judicial em Conflitos Societários",
+   "Ação de Responsabilidade do art. 246, da Lei 6.404/76",
+   "Ação de Reconhecimento de Sociedade de Fato",
+   "Ação de Exigir Contas",
+   "Intervenção Judicial em Conflitos Societários (Parte 1)",
+   "Intervenção Judicial em Conflitos Societários (Parte 2)",
+   "Intervenção Judicial em Conflitos Societários (Parte 3)",
+   "Resolução de Conflitos Societários nas Juntas Comerciais Aspectos Práticos",
+   "Resolução de Conflitos Nas Juntas Comerciais e No DREI"
+  ]
+ ],
+ [
+  "Contencioso Empresarial",
+  [
+   "Negócios Jurídicos Processuais",
+   "Solução de Disputas no Contencioso Estratégico Empresarial",
+   "Arbitragem: Principais Temas",
+   "Aspectos Práticos da Advocacia em Leilões de Imóveis",
+   "Negócio Jurídico Processual Aplicado aos Contratos Empresariais: Limites e Possibilidades",
+   "Ação Indenizatória por Violação de Segredo de Negócio",
+   "Ação Renovatória de Locação: Requisitos e Prazos Fatais para Garantir a Permanência da Empresa no Ponto Comercial",
+   "Impactos Processuais na Lei 14.195/21",
+   "Técnicas de Litigância"
+  ]
+ ],
+ [
+  "Entretenimento e Economia Criativa",
+  [
+   "O impacto da regulamentação dos jogos no ordenamento jurídico brasileiro",
+   "Influenciadores Digitais: Aspectos Jurídicos",
+   "Contratos com Streamers e Plataformas de Streaming",
+   "Contrato de Media for Equity",
+   "Contratos de Coprodução de Curso Online",
+   "Contrato de Naming Rights",
+   "Requerimento de Remoção de Conteúdo Ilícito em Redes Sociais à Luz do Tema 987, do STF"
+  ]
+ ],
+ [
+  "Contratos Empresariais em Espécie",
+  [
+   "Cessão de Quotas x Trespasse: Diferenças, Requisitos e Efeitos",
+   "Implementação do Sistema de Franquias",
+   "Seguros Empresariais",
+   "Seguro de Responsabilidade Civil para Empresas e Profissionais de Saúde",
+   "Contrato de Built to Suit",
+   "Contratos de Colaboração",
+   "NDA (Non Disclosure Agreement)",
+   "Acordo de Indenidade",
+   "Revisão, Rescisão e Penalidades em Contratos Empresariais"
+  ]
+ ],
+ [
+  "Criptoativos, Blockchain e Tokenização",
+  [
+   "Contratos com Prestadores de Serviços de Ativos Virtuais",
+   "Marco Legal dos Criptoativos",
+   "Advocacia no Mercado de Criptoativos",
+   "Aplicação da Blockchain na Advocacia Empresarial",
+   "Tokenização de valor mobiliário via Resolução CVM 88"
+  ]
+ ],
+ [
+  "Desconsideração da Personalidade Jurídica",
+  [
+   "A Desconsideração da Personalidade Jurídica nos Processos de Insolvência",
+   "A Defesa do Sócio/Administrador de Sociedade Empresária na Execução Fiscal",
+   "Desconsideração da Personalidade Jurídica",
+   "O Fim da Teoria Menor da Desconsideração (Parte 1)",
+   "O Fim da Teoria Menor da Desconsideração (Parte 2)",
+   "O Fim da Teoria Menor da Desconsideração (Parte 3)",
+   "Defesa da PJ em Incidentes de Desconsideração",
+   "Ações de Desconsideração da PJ",
+   "Incidente de Desconsideração da Personalidade Jurídica",
+   "Alterações na Desconsideração da Personalidade Jurídica",
+   "Entendendo a Verdadeira Limitação de Responsabilidade"
+  ]
+ ],
+ [
+  "Direito Cooperativo e Cooperativismo",
+  [
+   "Direito Cooperativo e Cooperativismo (Parte 1)",
+   "Direito Cooperativo e Cooperativismo (Parte 2)",
+   "Direito Cooperativo e Cooperativismo (Parte 3)",
+   "Direito Cooperativo e Cooperativismo (Parte 4)"
+  ]
+ ],
+ [
+  "Direito Desportivo Empresarial",
+  [
+   "Aspectos Práticos da SAF I (Lei 14.193/2021)",
+   "Aspectos Societários dos Clubes-Empresa e das SAFs",
+   "Questões práticas sobre M&As de SAFs",
+   "SAF e Recuperação Judicial de Clubes de Futebol (Parte 1)",
+   "SAF e Recuperação Judicial de Clubes de Futebol (Parte 2)",
+   "SAF e Recuperação Judicial de Clubes de Futebol (Parte 3)",
+   "Aspectos societários dos Clubes-Empresa e das SAFs",
+   "Aspectos Práticos da SAF I (Lei 14.193/2021)",
+   "Questões Práticas Sobre M&As de SAFs",
+   "Fair Play Financeiro"
+  ]
+ ],
+ [
+  "Direito do Agronegócio",
+  [
+   "Contratos do Agronegócio",
+   "Crédito Rural e Sistema Privado de Financiamento do Agronegócio",
+   "Advocacia Empresarial no Agronegócio (Parte 1)",
+   "Advocacia Empresarial no Agronegócio (Parte 2)"
+  ]
+ ],
+ [
+  "Direito do Trabalho Empresarial",
+  [
+   "O Que a Regra que Bane Cláusula de Não Concorrência com Trabalhadores nos EUA Pode Sinalizar Para as Empresas no Brasil",
+   "Princípios | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 1)",
+   "Relação de Emprego x Pejotização | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 2)",
+   "Casos Frequentes em Empresas | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 3)",
+   "Riscos Psicossociais: O Novo Capítulo da NR-1 que o Empresário (e o Advogado Dele) Precisa Entender | Advocacia Empresarial e Direito do Trabalho: Como Ajudar Empregadores a Reduzir os Riscos de Litígio (Parte 4)"
+  ]
+ ],
+ [
+  "Direito no Mercado Financeiro",
+  [
+   "Novo Marco Legal das Garantias",
+   "Estrutura jurídica dos produtos bancários e do crédito no Mercado Financeiro",
+   "Bancos Públicos, Financiamento ao Desenvolvimento e Política de Crédito",
+   "Câmbio, Stablecoins e Inovação Regulatória no Mercado Financeiro",
+   "Proteção de Dados no Mercado Financeiro",
+   "Contencioso estratégico no Mercado Financeiro",
+   "Propriedade Intelectual no Mercado Financeiro"
+  ]
+ ],
+ [
+  "Direito Tributário Empresarial",
+  [
+   "Aspectos da Carga Tributária no Mundo e no Brasil (Parte 1)",
+   "Aspectos da Carga Tributária no Mundo e no Brasil (Parte 2)",
+   "Aspectos da Carga Tributária no Mundo e no Brasil (Parte 3)",
+   "Aspectos da Carga Tributária no Mundo e no Brasil (Parte 4)",
+   "Aspectos Tributários da Integralização de Capital Social (Parte 1)",
+   "Aspectos Tributários da Integralização de Capital Social (Parte 2)"
+  ]
+ ],
+ [
+  "Dissolução e Apuração de Haveres",
+  [
+   "Dissolução Parcial de Sociedade",
+   "Dissolução Total de Sociedade",
+   "Apuração de Haveres em sociedade Simples",
+   "Dissolução Parcial de Sociedade",
+   "Apuração de Haveres",
+   "Apuração de Haveres em Decorrência de Dissolução Conjugal",
+   "Dissolução Total de Sociedade",
+   "Questões Processuais na Apuração de Haveres",
+   "Avaliação para Fins de Apuração de Haveres nas LTDAs",
+   "Avaliação de Bens e Aplicação de Juros de Mora na Apuração de Haveres",
+   "O pedido indenizatório no âmbito da ação de dissolução parcial de sociedade - aspectos processuais",
+   "Apuração e Pagamento de Haveres"
+  ]
+ ],
+ [
+  "Documentos Societários",
+  [
+   "Elaboração de Contrato Social Eficiente (Parte 1)",
+   "Elaboração de Contrato Social Eficiente (Parte 2)",
+   "O \"Caminho das Pedras\" nos Estatutos Sociais",
+   "MoU (Memorando de Entendimentos)",
+   "Cláusula de Non Compete em Contratos Societários",
+   "Cláusulas de Acordo de Acionistas",
+   "Contrato Social: Análise de Critérios Jurídicos e Econômicos para a Elaboração de Cláusulas Específicas",
+   "Contrato Social",
+   "Estatuto Social",
+   "Acordo de Sócios"
+  ]
+ ],
+ [
+  "Falência",
+  [
+   "O Novo Processo de Falência: Impactos da Lei 14.112/20",
+   "(Im)possibilidade do Pedido de Falência como Meio de Cobrança",
+   "Pedido de Falência pelo Fisco"
+  ]
+ ],
+ [
+  "Fundamentos do Direito Societário",
+  [
+   "Sociedade em Conta de Participação (SCP)",
+   "Joint Ventures",
+   "Como Estruturar uma Relação Societária Capital-Trabalho",
+   "Associações Empresariais e SPE",
+   "Tipos Societários: Vantagens e Desvantagens Práticas",
+   "Sociedade de Fato"
+  ]
+ ],
+ [
+  "Fusões e Aquisições",
+  [
+   "Pontos Estratégicos no Processo de M&A",
+   "Aprovação Concorrencial de Operações Societárias pelo CADE",
+   "Cláusula de Não Concorrência em M&A's",
+   "Estratégia de Elon Musk para Comprar o Twitter"
+  ]
+ ],
+ [
+  "Gestão de Escritórios de Advocacia",
+  [
+   "Estruturação societária de Escritórios de Advocacia (Parte 1)",
+   "Estruturação Societária de Escritórios de Advocacia (Parte 2)",
+   "Negociação e Precificação de Honorários (Parte 1)",
+   "Negociação e Precificação de Honorários (Parte 2)",
+   "Negociação e Precificação de Honorários (Parte 3)",
+   "Negociação e Precificação de Honorários (Parte 4)",
+   "Contabilidade Básica para Advogados (Parte 1)",
+   "Contabilidade Básica para Advogados (Parte 2)",
+   "Pessoas | Gestão Eficiente na Advocacia",
+   "Como Aumentar a Produtividade do Escritório | Gestão Eficiente na Advocacia",
+   "Sistemas | Gestão Eficiente na Advocacia"
+  ]
+ ],
+ [
+  "Governança Societária",
+  [
+   "Assembleia de Sócios (da Convocação à Realização)",
+   "Invalidades Assembleares",
+   "Funcionamento da Assembleia Geral de Credores",
+   "A Lei 14.451 e a Modificação dos Quóruns da LTDA",
+   "Voto Conflitante",
+   "Distribuição de Lucros na Sociedade LTDA",
+   "Atuação em Assembleia de Acionistas",
+   "Distribuição de dividendos x Pro Labore: O que (não) Fazer e Como Fazer",
+   "Apurar, Deliberar e Pagar: O Marco Temporal Decisivo da Lei 15.270/25 Sobre Dividendos",
+   "O Novo Anonimato na S/A",
+   "Administração de Sociedade Limitada (Parte 1)",
+   "Administração de Sociedade Limitada (Parte 2)",
+   "Administração de Sociedade Limitada (Parte 3)",
+   "Administração de Sociedade Limitada (Parte 4)"
+  ]
+ ],
+ [
+  "Holdings e Empresas Familiares",
+  [
+   "Acordos de Cotistas/Acionistas em Empresas Familiares",
+   "Reestruturação Societária: O Sistema de Ampulheta",
+   "Holding Familiar"
+  ]
+ ],
+ [
+  "Inteligência Artificial na Advocacia",
+  [
+   "Aula de Boas-Vindas",
+   "Aula 01",
+   "Aula 02",
+   "Aula 03"
+  ]
+ ],
+ [
+  "Investimento e Financiamento de Sociedades",
+  [
+   "Mútuo Conversível em Participação Societária",
+   "Meios Alternativos de Captação de Recursos para Pequenas e Médias Empresas",
+   "Vesting",
+   "Mútuo Conversível em Participação Societária",
+   "Equity Crowdfunding",
+   "Contrato de SAFE no Brasil",
+   "Principais Cláusulas do Contrato de Vesting",
+   "Formas de Investimento na LTDA"
+  ]
+ ],
+ [
+  "Marketing Jurídico",
+  [
+   "Regras da OAB e Posicionamento Digital",
+   "Tráfego Pago para Advogados(as)",
+   "Comunicação e Oratória Jurídica",
+   "Conceitos Iniciais de Marketing Jurídico",
+   "Como Utilizar as Redes Sociais",
+   "Google ads: A Maior Engrenagem de Prospecção de Clientes na Internet",
+   "Criando sua Conta do Google ads na Prática",
+   "Criando sua Primeira Campanha de Google ads na Prática",
+   "Produção de Conteúdo em Blog e Criação de Escritório Digital",
+   "Como Atrair Clientes Através de Artigos (Parte 1)",
+   "Como Atrair Clientes Através de Artigos (Parte 2)",
+   "Como Atrair Clientes Através de Artigos (Parte 3)"
+  ]
+ ],
+ [
+  "Mercado de Capitais e Fundos de Investimento",
+  [
+   "Emissão de Debêntures",
+   "Debêntures ou Notas Comerciais? O que Adotar na Sociedade Limitada",
+   "O Novo Marco da Securitização",
+   "Advocacia no Mercado de Capitais (Parte 1)",
+   "Advocacia no Mercado de Capitais (Parte 2)",
+   "Como Constituir e Estruturar Fundos de Investimentos",
+   "O Novo Marco Regulatório dos Fundos de Investimento",
+   "Fundos de Investimento (Parte 1)",
+   "Fundos de Investimento (Parte 2)",
+   "Fundos de Investimento (Parte 3)"
+  ]
+ ],
+ [
+  "Português Jurídico",
+  [
+   "Introdução",
+   "Vocabulário Jurídico",
+   "Emprego de Algumas Expressões e Pronomes de Tratamento",
+   "Ortografia e Regência",
+   "Conectivos",
+   "Partícula SE e Concordância",
+   "Pontuação",
+   "Pontuação: Como Fazer Referência a Dispositivos Legais + Pronomes Demonstrativos.",
+   "Vícios de Linguagem que Comprometem Seu Texto",
+   "Vícios Textuais: Estratégias Argumentativas",
+   "Estratégias Argumentativas; Ferramentas de Pesquisa"
+  ]
+ ],
+ [
+  "Propriedade Industrial",
+  [
+   "Registro de Marcas",
+   "Busca e Registro de Marcas na Prática",
+   "Prova Técnica, Perícias e as Pesquisas de Mercado Nos Processos Judiciais Sobre Trade Dress",
+   "Advocacia no Direito das Marcas",
+   "Um Guia no Contencioso de Marcas",
+   "Concorrência Desleal"
+  ]
+ ],
+ [
+  "Proteção de Dados",
+  [
+   "Atuação Fiscalizatória e Processo Sancionador da ANPD",
+   "Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 1)",
+   "Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 2)",
+   "Advocacia Empresarial e LGPD: Como Orientar Empresas a se Adaptarem às Regras de Proteção de Dados (Parte 3)"
+  ]
+ ],
+ [
+  "Recuperação Extrajudicial e Pré-insolvência",
+  [
+   "Negociação Antecedente e Recuperação Extrajudicial",
+   "Questões Práticas do Sistema de Pré-Insolvência",
+   "Recuperação Extrajudicial"
+  ]
+ ],
+ [
+  "Recuperação Judicial",
+  [
+   "Elaboração do Plano de Recuperação Judicial",
+   "Habilitação, Divergência e Impugnação à Relação de Credores",
+   "Recuperação Judicial do Produtor Rural",
+   "Como Fazer uma Petição Inicial do Pedido de RJ",
+   "DIP Financing",
+   "Análise de Caso: Lojas Americanas",
+   "Plano de Recuperação Judicial Alternativo, Apresentado Pelos Credores",
+   "Cautelares Antecedentes na Recuperação Judicial",
+   "Análise de Caso: 123 Milhas",
+   "Novação Recuperacional",
+   "Créditos Fiscais na Recuperação Judicial após a Lei nº 14.112/2020",
+   "Aspectos Práticos da Administração Judicial",
+   "Reorganizações Societárias Como Meios de Recuperação Judicial",
+   "Abuso de Voto na Recuperação Judicial",
+   "Prática, Precedentes e Casos na Perspectiva do Credor em processos de insolvência",
+   "23 - Plano Alternativo de Credores: Aspectos Polêmicos"
+  ]
+ ],
+ [
+  "Reforma Tributária",
+  [
+   "Contratos e Reforma Tributária: Pontos de Atenção",
+   "Reforma Tributária (Parte 1)",
+   "Reforma Tributária (Parte 2)",
+   "Holding na Reforma Tributária (Parte 1)",
+   "Holding na Reforma Tributária (Parte 2)",
+   "Holding na Reforma Tributária (Parte 3)",
+   "Holding na Reforma Tributária (Parte 4)",
+   "Holding na Reforma Tributária (Parte 5)",
+   "Reforma Tributária Sobre o Consumo",
+   "Reforma Tributária Sobre a Renda",
+   "Reforma Tributária Sobre o Patrimônio",
+   "Reforma Tributária para Advocacia Empresarial - Serviços e Oportunidades"
+  ]
+ ],
+ [
+  "Registro Empresarial",
+  [
+   "Registro de Empresas",
+   "IN DREI nº 88/2022",
+   "Publicidade Obrigatória das S/A na Prática",
+   "Arquivamento de Atos Empresariais e Processo Revisional Nas Juntas Comerciais (IN DREI N. 81/2020 e Alterações)",
+   "Como Preencher Os Livros Societários",
+   "Inova Simples",
+   "Tratamento Jurídico Dado à Fraude de Terceiros Levadas a Registro nas Juntas Comerciais",
+   "Registro Empresarial como Ferramenta de Blindagem Societária",
+   "IN DREI nº 88/2022",
+   "IN nº 01/24, do DREI",
+   "Processo de Legalização de Empresas: Uma Visão Contábil",
+   "Aspectos Jurídicos e Práticos da Atuação do MEI",
+   "Aspectos Registrais da Dissolução Parcial de Sociedade"
+  ]
+ ],
+ [
+  "Transação Tributária",
+  [
+   "Por que transacionar? Fundamentos e evolução da cobrança tributária",
+   "A transação de crédito tributário federal",
+   "Transação Tributária",
+   "Capacidade de Pagamento (CAPAG)"
+  ]
+ ]
+];
+const PROFESSORES = [
+ [
+  "Fábio Ulhoa Coelho",
+  "Pablo Arruda",
+  "Bruna Puga",
+  "Thiago Guterres e Anna Moroni",
+  "Bianca Bez",
+  "Pablo Arruda",
+  "Pedro Ramunno"
+ ],
+ [
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Bruno Burini",
+  "Daniel Colnago",
+  "Daniel Colnago",
+  "Daniel Colnago",
+  "Mozart Borba",
+  "Mozart Borba",
+  "Saul Tourinho",
+  "Saul Tourinho"
+ ],
+ [
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Estela Nunes",
+  "André Santa Cruz",
+  "André Santa Cruz",
+  "Estela Nunes",
+  "Manassés Lopes",
+  "Manassés Lopes",
+  "Manassés Lopes"
+ ],
+ [
+  "Henrique Arake"
+ ],
+ [
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF"
+ ],
+ [
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF"
+ ],
+ [
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF"
+ ],
+ [
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF"
+ ],
+ [
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF",
+  "PDF"
+ ],
+ [
+  "Fábio Soares",
+  "Amanda Ramalho",
+  "Amanda Ramalho",
+  "Amanda Ramalho",
+  "Amanda Ramalho",
+  "Andressa Guerra"
+ ],
+ [
+  "Bráulio Bicalho",
+  "Pablo Arruda",
+  "Marcela Marconi",
+  "Leonardo Honorato",
+  "Mariana Martins Costa",
+  "Leonardo Honorato",
+  "Leonardo Honorato",
+  "Marcelo Guedes Nunes",
+  "Marcelo Luar",
+  "Maurício Menezes",
+  "Manassés Lopes",
+  "Manassés Lopes",
+  "Marcelo Lauar",
+  "Marcelo Lauar",
+  "Marcelo Lauar",
+  "Amanda Mesquita",
+  "Leonardo Honorato"
+ ],
+ [
+  "Jaylton Lopes",
+  "Bruno Burini",
+  "Marcelo Dickstein",
+  "Lucas Lourenço",
+  "Manassés Lopes",
+  "Manassés Lopes",
+  "Manassés Lopes",
+  "Haroldo Lourenço",
+  "Erick Navarro"
+ ],
+ [
+  "João Rachid Motta",
+  "Allan Turano",
+  "Allan Turano",
+  "Allan Turano",
+  "Ronan Santos",
+  "Allan Turano",
+  "Chiara de Teffé"
+ ],
+ [
+  "Pablo Arruda",
+  "Alexandre Gialluca",
+  "Roberta Franco",
+  "Roberta Franco",
+  "André Roberto",
+  "Tatiana Dratovsky-Sister",
+  "André Roberto",
+  "Allan Turano",
+  "Tiago Vinhas"
+ ],
+ [
+  "Priscilla Menezes",
+  "Caio Sanas",
+  "Caio Sanas",
+  "Caio Sanas",
+  "Simone Gantois"
+ ],
+ [
+  "Jarder Lemos Neto",
+  "Márcia Sepulveda",
+  "Maurício Buzanar",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "André Cont",
+  "Manassés",
+  "Marlon Tomazette",
+  "Pablo Arruda"
+ ],
+ [
+  "Marco Kaluf",
+  "Marco Kaluf",
+  "Marco Kaluf",
+  "Marco Kaluf"
+ ],
+ [
+  "Rodrigo Monteiro de Castro",
+  "Allan Turano",
+  "Eduardo Molan Gaban",
+  "Filipe Denki",
+  "Filipe Denki",
+  "Filipe Denki",
+  "Allan Turano",
+  "Rodrigo Monteiro de Castro",
+  "Eduardo Molan Gaban",
+  "Jonas Marmelo"
+ ],
+ [
+  "Renato Buranello",
+  "Renato",
+  "Washington Pimenta",
+  "Washington Pimentel"
+ ],
+ [
+  "Amanda Athayde",
+  "Felipe Alciprete",
+  "Felipe Alciprete",
+  "Felipe Alciprete",
+  "Felipe Alciprete"
+ ],
+ [
+  "Constanza Bodini",
+  "Alessandro Fazel",
+  "Caio Cézar",
+  "Danuza Küster",
+  "Nayra Mendes",
+  "Matheus Sampaio",
+  "Felipe Simões"
+ ],
+ [
+  "Felipe Kertesz Renault",
+  "Felipe Kertesz Renault",
+  "Felipe Kertesz Renault",
+  "Felipe Kertesz Renault",
+  "Pablo Arruda",
+  "Pablo Arruda"
+ ],
+ [
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Wagner Armani",
+  "Pablo Arruda",
+  "Miguel Monteiro",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Mariana Pinto",
+  "Renato Vilela",
+  "Marcus Elidius",
+  "Luiz Eduardo Martin",
+  "Pablo Arruda e André Santa Cruz"
+ ],
+ [
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "João Pedro Nascimento",
+  "Ivo Gico",
+  "Paulo Palhares",
+  "Henrique Arake",
+  "Emerson Andena",
+  "Henrique Arake",
+  "Henrique Arake",
+  "Henrique Arake"
+ ],
+ [
+  "Marcelo Andrade Feres",
+  "André Santa Cruz",
+  "Filipe Aguiar"
+ ],
+ [
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Rodrigo Tellechea",
+  "Pablo Arruda"
+ ],
+ [
+  "Mariana Maduro",
+  "Gustavo Coelho",
+  "Uinie Caminha",
+  "André Santa Cruz e Saulo Michles"
+ ],
+ [
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Caio Melo",
+  "Caio Melo",
+  "Ronan Santos",
+  "Ronan Santos",
+  "Ronan Santos"
+ ],
+ [
+  "Marlon Tomazette",
+  "Marcelo Von Adamek",
+  "Bruno Rezende",
+  "Pablo Arruda",
+  "Gustavo Gonzales",
+  "Henrique Arake",
+  "Allan Turano",
+  "Allan Turano",
+  "Diego Amorin",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda"
+ ],
+ [
+  "Marcos Andrey de Souza",
+  "Pablo Arruda",
+  "Henrique Arake"
+ ],
+ [
+  "",
+  "",
+  "",
+  ""
+ ],
+ [
+  "Rodrigo Zirpoli",
+  "Isac Costa",
+  "Pablo Arruda",
+  "Rodrigo Zirpoli",
+  "Allan Turano",
+  "Allan Turano",
+  "Ronan Santos",
+  "Pablo Arruda"
+ ],
+ [
+  "Ronan Santos",
+  "Ronan Santos",
+  "Felipe Ferreira",
+  "Ronan Santos",
+  "Ronan Santos",
+  "Ronan Santos",
+  "Natan Gabriel",
+  "Natan Gabriel",
+  "Bruna Puga",
+  "Sérgio Merola",
+  "Sérgio Merola",
+  "Sérgio Merola"
+ ],
+ [
+  "Uinie Caminha",
+  "Allan Turano",
+  "Uinie Caminha",
+  "Pedro Castelar",
+  "Pedro Castelar",
+  "Rodrigo Dufloth",
+  "Rodrigo Dufloth",
+  "Rodrigo Dufloth",
+  "Rodrigo Dufloth",
+  "Rodrigo Dufloth"
+ ],
+ [
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  ""
+ ],
+ [
+  "Rogério Figueiras",
+  "Neide Bueno",
+  "Kone Cesário",
+  "Alexandre Gialluca",
+  "Daniel Delatorre",
+  "Igor Manzan"
+ ],
+ [
+  "Allan Turano",
+  "André Roberto",
+  "André Roberto",
+  "André Roberto"
+ ],
+ [
+  "Pedro F. Teixeira",
+  "Daniel Carnio Costa",
+  "Marcos Andrey"
+ ],
+ [
+  "Juliana Bumachar",
+  "Pablo Arruda",
+  "Marcelo Sacramone",
+  "Maria Fabiana Dominguez",
+  "Thomaz Sant'Ana",
+  "Pablo Arruda",
+  "Paulo Furtado e Gustavo Lacerda",
+  "Maria Fabiana Sant'Ana",
+  "Pablo Arruda",
+  "Marlon Tomazette",
+  "André Santa Cruz",
+  "João Pedro Scalzilli",
+  "Arnaldo Ferreira",
+  "Marcos Andrey",
+  "Vitor Lages",
+  "Victor Lages"
+ ],
+ [
+  "André Roberto",
+  "Gabriel Quintanilha",
+  "Gabriel Quintanilha",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Pablo Arruda",
+  "Eduardo Weyll",
+  "Eduardo Weyll",
+  "Eduardo Weyll",
+  "Eduardo Weyll"
+ ],
+ [
+  "José Cerezoli",
+  "Allan Turano e André Santa Cruz",
+  "Bruno Camargo",
+  "Amanda Mesquita",
+  "Allan Turano",
+  "Allan Turano",
+  "Danilo Mergulhão",
+  "Amanda Mesquita",
+  "Allan Turano e André Santa Cruz",
+  "Amanda Mesquita",
+  "Lucas Cruz",
+  "Fernando Gaggini",
+  "André Santa Cruz"
+ ],
+ [
+  "Ariel Möller",
+  "Luciana Belo Soares",
+  "Filipe Aguiar",
+  "Ariel Möller"
+ ]
+];
 
 /* ---------- utilidades ---------- */
 const foldChar = c => { const d = c.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(); return d.length === 1 ? d : c; };
@@ -786,6 +1379,8 @@ const MODULES = DATA.map(([title, lessons], i) => {
   };
 });
 
+const LEGACY_PROGRESS_MAP = {"1:0":"1:0","1:1":"1:1","1:2":"1:2","1:3":"1:3","1:4":"13:0","1:5":"11:0","1:6":"1:4","1:7":"1:5","1:8":"1:6","2:0":"2:0","2:1":"2:1","2:2":"2:2","2:3":"2:3","2:4":"2:4","2:5":"2:5","2:6":"2:6","2:7":"2:7","2:8":"2:8","2:9":"2:9","2:10":"2:10","2:11":"2:11","2:12":"2:12","2:13":"2:13","2:14":"2:14","3:0":"3:0","3:1":"3:1","3:2":"3:2","3:3":"3:3","3:4":"3:4","3:5":"3:5","3:6":"3:6","3:7":"3:7","3:8":"3:8","4:0":"4:0","5:0":"5:0","5:1":"5:1","5:2":"5:2","5:3":"5:3","6:0":"6:0","6:1":"6:1","6:2":"6:2","6:3":"6:3","7:1":"7:1","7:2":"7:3","7:3":"7:4","7:4":"7:5","8:0":"8:0","8:1":"8:1","8:2":"8:2","8:3":"8:3","9:0":"9:0","9:1":"9:1","9:2":"9:2","9:3":"9:3","9:4":"9:4","9:5":"9:5","9:6":"9:6","9:7":"9:7","9:8":"9:8","9:9":"9:9","10:0":"10:0","10:1":"10:1","10:2":"10:2","10:3":"10:3","10:4":"10:4","10:5":"10:5","11:0":"11:1","11:1":"11:2","11:2":"11:3","11:3":"11:4","11:4":"11:5","11:5":"11:6","12:0":"11:7","12:1":"12:0","12:2":"11:8","12:3":"11:9","12:4":"12:1","12:5":"12:2","12:6":"11:10","12:7":"11:11","12:8":"12:3","12:9":"12:4","12:10":"12:5","12:11":"12:6","12:12":"12:7","12:13":"12:8","12:14":"11:12","12:15":"11:13","12:16":"11:14","13:0":"13:1","13:1":"13:2","13:2":"13:3","13:3":"13:4","13:4":"13:5","13:5":"13:6","14:0":"14:0","14:1":"14:1","14:2":"14:2","14:3":"26:0","14:4":"14:3","14:5":"14:4","14:6":"14:5","15:0":"15:0","15:1":"15:1","15:2":"15:2","15:3":"15:3","15:4":"15:4","16:0":"16:0","16:1":"16:1","16:2":"16:2","16:3":"16:3","16:4":"16:4","16:5":"16:5","16:6":"16:6","16:7":"16:7","16:8":"16:8","16:9":"16:9","17:0":"17:0","17:1":"17:1","17:2":"17:2","17:3":"17:3","18:3":"18:3","18:4":"18:4","18:5":"18:5","18:6":"18:9","19:0":"19:0","19:1":"19:1","19:2":"19:2","19:3":"19:3","20:0":"20:0","20:1":"20:1","20:2":"20:2","20:3":"20:3","20:4":"20:4","21:0":"21:0","21:1":"21:1","21:2":"21:2","21:3":"21:3","21:4":"21:4","21:5":"21:5","21:6":"21:6","22:0":"22:0","22:1":"22:1","22:2":"22:2","22:3":"22:3","22:4":"22:4","22:5":"22:5","23:2":"23:2","23:3":"23:4","23:4":"23:5","23:5":"23:7","23:6":"23:8","23:7":"23:9","23:8":"23:11","24:0":"24:0","24:1":"24:1","24:3":"24:3","24:4":"24:4","24:5":"26:1","24:6":"24:5","24:7":"24:6","24:8":"24:7","24:9":"24:8","24:10":"24:9","25:0":"25:0","25:1":"25:1","25:2":"25:2","26:0":"26:2","26:1":"26:3","26:2":"26:4","26:3":"26:5","26:4":"16:10","27:0":"14:6","27:1":"14:7","27:2":"14:8","28:0":"27:0","28:1":"27:1","28:2":"27:2","28:3":"27:3","29:0":"28:0","29:1":"28:1","29:2":"28:2","29:3":"28:3","29:4":"28:4","29:5":"28:5","29:6":"28:6","29:7":"28:7","29:8":"28:8","29:9":"28:9","29:10":"28:10","30:0":"29:0","30:1":"29:1","30:2":"29:2","30:3":"29:3","30:4":"29:4","30:5":"29:5","30:6":"29:6","30:7":"29:7","30:8":"29:8","30:9":"29:9","30:10":"29:10","30:11":"29:11","30:12":"29:12","30:13":"29:13","31:0":"30:0","31:1":"30:1","31:2":"30:2","33:1":"32:1","33:2":"32:2","33:3":"32:4","33:4":"32:5","33:5":"32:6","33:6":"32:7","34:0":"33:0","34:1":"33:1","34:2":"33:2","34:3":"33:3","34:4":"33:4","34:5":"33:5","34:6":"33:6","34:7":"33:7","34:8":"33:8","34:9":"33:9","34:10":"33:10","34:11":"33:11","35:0":"34:0","35:1":"34:1","35:2":"34:2","35:3":"34:3","35:4":"34:4","35:5":"34:5","35:6":"34:6","35:7":"34:7","35:8":"34:8","35:9":"34:9","37:0":"36:0","37:1":"36:1","37:2":"36:2","37:3":"36:3","37:4":"36:4","37:5":"36:5","38:0":"37:0","38:1":"37:1","38:2":"37:2","38:3":"37:3","39:0":"38:0","39:1":"38:1","39:2":"38:2","40:0":"39:0","40:1":"39:1","40:2":"39:2","40:3":"39:3","40:4":"39:4","40:5":"39:5","40:6":"39:6","40:7":"39:7","40:8":"39:8","40:9":"39:9","40:10":"39:10","40:11":"39:11","40:12":"39:12","40:13":"39:13","40:14":"39:14","41:0":"2:15","41:1":"2:16","41:2":"2:17","41:3":"2:18","41:4":"2:19","41:5":"2:20","41:6":"2:21","42:0":"40:0","42:1":"40:1","42:2":"40:2","42:3":"40:3","42:4":"40:4","42:5":"40:5","42:6":"40:6","42:7":"40:7","42:8":"40:8","42:9":"40:9","42:10":"40:10","42:11":"40:11","43:1":"41:0","43:3":"41:2","43:4":"41:3","43:5":"41:4","43:6":"41:5","43:7":"41:6","43:8":"41:7","43:9":"41:9","43:10":"41:10","43:11":"41:11","43:12":"11:16","43:13":"41:12","44:0":"42:0","44:1":"42:1","44:2":"42:2"};
+
 /* ---------- elementos e estado ---------- */
 const grid = document.getElementById('grid');
 const input = document.getElementById('q');
@@ -800,7 +1395,18 @@ let listMode = false;
 let results = [];
 const progressKey = 'efae-guia-progresso-v1';
 let completed = new Set();
-try { completed = new Set(JSON.parse(localStorage.getItem(progressKey) || '[]')); } catch (_) {}
+try {
+  const saved = JSON.parse(localStorage.getItem(progressKey) || '[]');
+  const migrationFlag = 'efae-guia-progresso-espelho-2026-10-14';
+  if (!localStorage.getItem(migrationFlag)) {
+    const legacyMap = LEGACY_PROGRESS_MAP;
+    completed = new Set(saved.map(k => legacyMap[k]).filter(Boolean));
+    localStorage.setItem(progressKey, JSON.stringify([...completed]));
+    localStorage.setItem(migrationFlag, '1');
+  } else {
+    completed = new Set(saved);
+  }
+} catch (_) {}
 function lessonKey(m, i) { return `${m.id}:${i}`; }
 function progressCount(m) { return m.lessons.filter((_, i) => completed.has(lessonKey(m, i))).length; }
 function updateOverallProgress() {
