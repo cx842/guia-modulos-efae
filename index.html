@@ -236,6 +236,8 @@
   }
   .panel.enter{animation:panelIn .22s ease-out}
   @keyframes panelIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .module-pdf{font:inherit;font-size:12px;font-weight:600;color:var(--on-gold);background:#E8D5BC;border:1px solid #C6A47E;border-radius:8px;padding:8px 10px;cursor:pointer;white-space:nowrap}
+  .module-pdf:hover{background:#C6A47E}
   .panel-head{
     position:relative;z-index:1;
     background:var(--gold);color:var(--on-gold);
@@ -324,6 +326,7 @@
     .plus,.card{transition:none}
   }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 </head>
 <body>
 
@@ -354,7 +357,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
       </button>
     </label>
-    <div class="bulk-actions"><button id="expandAll" type="button">Expandir todos</button><button id="collapseAll" type="button">Recolher todos</button></div>
+    <div class="bulk-actions"><button id="expandAll" type="button">Expandir todos</button><button id="collapseAll" type="button">Recolher todos</button><button id="downloadAllPdf" type="button" title="Gerar PDF com todos os módulos">↓ Baixar guia em PDF</button></div>
     <p class="summary" id="summary" aria-live="polite"></p>
   </div>
 </div>
@@ -1504,7 +1507,7 @@ function placePanel(animate) {
         const dim = q && r.hits.length && !r.hits.includes(i);
         return lessonRow(m, t, i, professor, dim);
       }).join('');
-      panel.innerHTML = `<section id="painel-${m.id}" aria-label="Módulo ${m.num}: ${esc(m.title)}"><div class="panel-head"><span class="ph-mod">Módulo ${m.num}</span><span class="ph-div" aria-hidden="true"></span><span class="ph-title">${esc(m.title)}</span>${moduleAction(m)}<button class="panel-close" data-id="${m.id}" type="button">Fechar ×</button></div><ol class="rows">${rows}</ol></section>`;
+      panel.innerHTML = `<section id="painel-${m.id}" aria-label="Módulo ${m.num}: ${esc(m.title)}"><div class="panel-head"><span class="ph-mod">Módulo ${m.num}</span><span class="ph-div" aria-hidden="true"></span><span class="ph-title">${esc(m.title)}</span>${moduleAction(m)}<button class="module-pdf" type="button" data-pdf-module="${m.id}" aria-label="Baixar PDF do módulo ${m.num}">↓ PDF do módulo</button><button class="panel-close" data-id="${m.id}" type="button">Fechar ×</button></div><ol class="rows">${rows}</ol></section>`;
       card.after(panel);
     }
     return grid.querySelector('.panel');
@@ -1530,7 +1533,7 @@ function placePanel(animate) {
       const section = document.createElement('section');
       section.id = `painel-${m.id}`;
       section.setAttribute('aria-label', `Módulo ${m.num}: ${m.title}`);
-      section.innerHTML = `<div class="panel-head"><span class="ph-mod">Módulo ${m.num}</span><span class="ph-div" aria-hidden="true"></span><span class="ph-title">${esc(m.title)}</span>${moduleAction(m)}<button class="panel-close" data-id="${m.id}" type="button">Fechar ×</button></div><ol class="rows">${rows}</ol>`;
+      section.innerHTML = `<div class="panel-head"><span class="ph-mod">Módulo ${m.num}</span><span class="ph-div" aria-hidden="true"></span><span class="ph-title">${esc(m.title)}</span>${moduleAction(m)}<button class="module-pdf" type="button" data-pdf-module="${m.id}" aria-label="Baixar PDF do módulo ${m.num}">↓ PDF do módulo</button><button class="panel-close" data-id="${m.id}" type="button">Fechar ×</button></div><ol class="rows">${rows}</ol>`;
       panel.appendChild(section);
     }
     cards[Math.min(start + cols - 1, cards.length - 1)].after(panel);
@@ -1551,6 +1554,116 @@ function closePanel(id) {
   const card = grid.querySelector(`.card[data-id="${id}"]`);
   if (card) card.focus();
 }
+
+/* ---------- PDF real, sem janela de impressão ---------- */
+async function exportGuidePdf(modules) {
+  const allButton = document.getElementById('downloadAllPdf');
+  const previous = allButton ? allButton.textContent : '';
+  if (allButton) { allButton.disabled = true; allButton.textContent = 'Preparando PDF…'; }
+  try {
+    if (!window.jspdf || !window.jspdf.jsPDF) {
+      throw new Error('A biblioteca de PDF não carregou. Verifique a conexão com a internet e tente novamente.');
+    }
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4', compress:true });
+    const W = 210, H = 297, left = 15, right = 15, bottom = 19;
+    const brown = [43,33,25], gold = [198,164,126], pale = [248,244,239], white = [255,255,255];
+    const setFill = rgb => doc.setFillColor(...rgb);
+    const setText = rgb => doc.setTextColor(...rgb);
+    const txt = value => String(value == null ? '' : value).normalize('NFC');
+    const total = modules.reduce((n,m)=>n+m.lessons.length,0);
+    let pageNo = 1;
+    function footer() {
+      setText(gold); doc.setFont('helvetica','normal'); doc.setFontSize(14); doc.text('EFAE',left,H-11);
+      setText(brown); doc.setFontSize(7); doc.text('PROF. ANDRÉ SANTA CRUZ',W-right,H-11,{align:'right'});
+      doc.setDrawColor(...gold); doc.setLineWidth(.25); doc.line(left,H-15,W-right,H-15);
+      doc.setFontSize(7); doc.text(String(pageNo),W/2,H-11,{align:'center'});
+    }
+    function nextPage() { footer(); doc.addPage(); pageNo++; return 20; }
+    // Capa em página inteira, sem cabeçalhos do navegador ou margens extras.
+    setFill(brown); doc.rect(0,0,W,H,'F');
+    setText(gold); doc.setDrawColor(...gold); doc.setLineWidth(.45);
+    doc.rect(66,49,78,32,'S');
+    doc.setFont('helvetica','bold'); doc.setFontSize(30); doc.text('EFAE',W/2,66,{align:'center'});
+    setFill(gold); doc.rect(66,72,78,9,'F');
+    setText(brown); doc.setFontSize(6.3); doc.text('ESCOLA DE FORMAÇÃO EM',W/2,75.6,{align:'center'});
+    doc.text('ADVOCACIA EMPRESARIAL',W/2,78.7,{align:'center'});
+    setText(gold); doc.setFont('helvetica','normal'); doc.setFontSize(29); doc.text('GUIA DE',W/2,140,{align:'center'});
+    doc.setFont('helvetica','bold'); doc.setFontSize(38); doc.text('MÓDULOS',W/2,157,{align:'center'});
+    setText(white); doc.setFont('helvetica','normal'); doc.setFontSize(8);
+    doc.text('ESCOLA DE FORMAÇÃO EM ADVOCACIA EMPRESARIAL',W/2,169,{align:'center'});
+    setText(gold); doc.setFontSize(9);
+    doc.text(modules.length === 1 ? `MÓDULO ${modules[0].num}` : `${modules.length} MÓDULOS  |  ${total} ITENS`,W/2,194,{align:'center'});
+    setText(white); doc.setFontSize(8); doc.text('PROF. ANDRÉ SANTA CRUZ',W/2,269,{align:'center'});
+    doc.addPage(); pageNo++;
+    let y = 20;
+    function heading(m, continuation=false) {
+      if (y+13>H-bottom) y=nextPage();
+      setFill(gold); doc.rect(left,y,W-left-right,10,'F');
+      setText(brown); doc.setFont('helvetica','bold'); doc.setFontSize(8);
+      doc.text(`MÓDULO ${m.num}`,left+3,y+6.4);
+      const title = txt(m.title).toUpperCase()+(continuation?' (CONT.)':'');
+      const fitted = doc.splitTextToSize(title,132);
+      doc.setFontSize(fitted.length>1?6.4:7.6);
+      doc.text(fitted.slice(0,2),left+99,y+(fitted.length>1?4:6.4),{align:'center'});
+      y+=10;
+      setFill(pale); doc.rect(left,y,W-left-right,7,'F');
+      setText(brown); doc.setFont('helvetica','bold'); doc.setFontSize(7);
+      doc.text('Nº',left+5,y+4.8,{align:'center'});
+      doc.text('AULA / CONTEÚDO',left+79,y+4.8,{align:'center'});
+      doc.text('PROFESSOR(A)',left+154,y+4.8,{align:'center'});
+      y+=7;
+    }
+    for (const m of modules) {
+      if (y+25>H-bottom) y=nextPage();
+      heading(m);
+      for (let i=0;i<m.lessons.length;i++) {
+        const lesson=txt(m.lessons[i]);
+        const professor=txt(m.professors[i] || (m.coll ? 'Material em PDF' : ''));
+        doc.setFont('helvetica','normal'); doc.setFontSize(7.5);
+        const a=doc.splitTextToSize(lesson,116);
+        const b=doc.splitTextToSize(professor,35);
+        const rh=Math.max(8,Math.max(a.length,b.length)*3.9+4);
+        if (y+rh>H-bottom) { y=nextPage(); heading(m,true); }
+        setFill(i%2===0?white:pale); doc.rect(left,y,W-left-right,rh,'F');
+        setFill(gold); doc.rect(left,y,12,rh,'F');
+        doc.setDrawColor(...gold); doc.setLineWidth(.16);
+        doc.rect(left,y,W-left-right,rh,'S');
+        doc.line(left+12,y,left+12,y+rh);
+        doc.line(left+134,y,left+134,y+rh);
+        setText(brown); doc.setFont('helvetica','bold'); doc.setFontSize(7.5);
+        doc.text(String(i+1),left+6,y+rh/2+2.3,{align:'center'});
+        doc.setFont('helvetica','normal'); doc.setFontSize(7.5);
+        doc.text(a,left+73,y+(rh-a.length*3.9)/2+3.2,{align:'center'});
+        doc.setFontSize(7.1);
+        doc.text(b,left+154,y+(rh-b.length*3.9)/2+3.2,{align:'center'});
+        y+=rh;
+      }
+      y+=8;
+    }
+    if (y+23>H-bottom) y=nextPage();
+    doc.setDrawColor(...gold); doc.line(left,y,W-right,y); y+=6;
+    setText(brown); doc.setFont('helvetica','normal'); doc.setFontSize(7.5);
+    const note=doc.splitTextToSize('Guia de consulta. As aulas e os materiais são acessados pela Hotmart. O progresso marcado neste guia não é sincronizado com a plataforma.',W-left-right);
+    doc.text(note,left,y);
+    footer();
+    const filename=modules.length===1?`EFAE_Modulo_${String(modules[0].num).padStart(2,'0')}.pdf`:'EFAE_Guia_de_Modulos_Atualizado.pdf';
+    doc.save(filename);
+  } catch (err) {
+    console.error('Erro ao gerar PDF:',err);
+    alert('Não foi possível gerar o PDF. '+(err.message||'Tente novamente.'));
+  } finally {
+    if (allButton) { allButton.disabled=false; allButton.textContent=previous; }
+  }
+}
+document.getElementById('downloadAllPdf').addEventListener('click', () => exportGuidePdf(MODULES));
+grid.addEventListener('click', e => {
+  const button = e.target.closest('.module-pdf');
+  if (!button) return;
+  e.preventDefault(); e.stopPropagation();
+  const m = MODULES.find(item => item.id === Number(button.dataset.pdfModule));
+  if (m) exportGuidePdf([m]);
+});
 
 /* ---------- controles de expansão ---------- */
 document.getElementById('expandAll').addEventListener('click', () => {
